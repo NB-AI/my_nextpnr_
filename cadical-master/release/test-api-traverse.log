@@ -1,0 +1,12 @@
+c opening file to write '../release/test-api-traverse.clauses'
+c writing 'p cnf 5 1' header
+c wrote 1 clauses in 0.00 seconds process time
+c opening file to write '../release/test-api-traverse.extensions'
+c wrote 4 witnesses in 0.00 seconds process time
+clauses
+4 0
+witnesses
+5 0 5 0
+2 0 -3 2 0
+-1 0 -1 -2 3 0
+1 0 -3 1 0

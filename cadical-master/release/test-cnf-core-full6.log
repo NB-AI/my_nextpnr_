@@ -1,0 +1,124 @@
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2024 A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt
+c 
+c Version 2.1.0
+c g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 -Wall -Wextra -O3 -DNDEBUG
+c Thu Dec 5 19:34:32 CET 2024 Linux c-HP-Pavilion-x360-Convertible-14-dh1xxx 5.15.0-125-generic x86_64
+c 
+c --- [ proof tracing ] ------------------------------------------------------
+c 
+c opening file to write '../release/test-cnf-core-full6.prf'
+c writing binary proof trace to '../release/test-cnf-core-full6.prf'
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from '../test/cnf/full6.cnf'
+c opening file to read '../test/cnf/full6.cnf'
+c found 'p cnf 6 64' header
+c parsed 64 clauses in 0.00 seconds process time
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c   --check=true                   (different from default 'false')
+c   --lrat=true                    (different from default 'false')
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c time measured in process time since initialization
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue     remaining
+c 
+c *  0.00  2  0 0   0    0    0  0% 0   64   6 100%
+c {  0.00  2  0 0   0    0    0  0% 0   64   6 100%
+c i  0.00  2  2 0   6   46    0 100% 0   34   5 83%
+c i  0.00  2  2 0   9   68    0 100% 0   20   4 67%
+c i  0.00  2  2 0  10   78    0 100% 0   14   3 50%
+c i  0.00  2  2 0  10   82    0 100% 0   12   2 33%
+c }  0.00  2  2 0  10   84    0 100% 0   12   0  0%
+c 0  0.00  2  2 0  10   84    0 100% 0   12   0  0%
+c 
+c --- [ closing proof ] ------------------------------------------------------
+c 
+c LRAT proof file '../release/test-cnf-core-full6.prf' closed
+c LRAT 59 added clauses 36.20%
+c LRAT 104 deleted clauses 63.80%
+c LRAT 993 bytes (0.00 MB)
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s UNSATISFIABLE
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         0.00   85.04% search
+c         0.00   78.94% unstable
+c         0.00   44.69% checking
+c         0.00   31.89% parse
+c         0.00    2.76% lucky
+c         0.00    0.00% simplify
+c   =================================
+c         0.00   62.03% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c conflicts:                    84    165354.33    per second
+c decisions:                    31     61023.62    per second
+c fixed:                         6       100.00 %  of all variables
+c learned:                       5         5.95 %  per conflict
+c learned_lits:                  5       100.00 %  learned literals
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                      0         0.00 %  learned literals
+c minishrunken:                  0         0.00 %  learned literals
+c otfs:                        104       123.81 %  of conflict
+c propagations:                 62         0.12 M  per second
+c restarts:                     10         8.40    interval
+c subsumed:                    104       162.50 %  of all clauses
+c strengthened:                 52        81.25 %  of all clauses
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ lrat checker statistics ] --------------------------------------------
+c 
+c checks:                       59
+c insertions:                  123       100.00 %  of all clauses
+c original:                     64        52.03 %  of all clauses
+c derived:                      59        47.97 %  of all clauses
+c deleted:                     104        84.55 %  of all clauses
+c finalized:                    19        15.45 %  of all clauses
+c collections:                   1         0.01    deleted per collection
+c collisions:                  100         0.25    per search
+c searches:                    399
+c 
+c --- [ checker statistics ] -------------------------------------------------
+c 
+c checks:                       57
+c assumptions:                 201         3.53    per check
+c propagations:                 89         1.56    per check
+c original:                     64        52.89 %  of all clauses
+c derived:                      57        47.11 %  of all clauses
+c deleted:                     104        85.95 %  of all clauses
+c insertions:                  116        95.87 %  of all clauses
+c collections:                   1         0.01    deleted per collection
+c collisions:                   16         0.15    per search
+c searches:                    104
+c units:                         5
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:         0.00    seconds
+c total real time since initialization:            0.00    seconds
+c maximum resident set size of process:            2.12    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 20

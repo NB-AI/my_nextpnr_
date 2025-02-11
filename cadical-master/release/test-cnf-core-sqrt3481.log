@@ -1,0 +1,129 @@
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2024 A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt
+c 
+c Version 2.1.0
+c g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 -Wall -Wextra -O3 -DNDEBUG
+c Thu Dec 5 19:34:32 CET 2024 Linux c-HP-Pavilion-x360-Convertible-14-dh1xxx 5.15.0-125-generic x86_64
+c 
+c --- [ proof tracing ] ------------------------------------------------------
+c 
+c opening file to write '../release/test-cnf-core-sqrt3481.prf'
+c writing binary proof trace to '../release/test-cnf-core-sqrt3481.prf'
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from '../test/cnf/sqrt3481.cnf'
+c opening file to read '../test/cnf/sqrt3481.cnf'
+c found 'p cnf 213 583' header
+c parsed 583 clauses in 0.00 seconds process time
+c 
+c --- [ parsing solution ] ---------------------------------------------------
+c 
+c reading solution file from '../test/cnf/sqrt3481.sol'
+c opening file to read '../test/cnf/sqrt3481.sol'
+c parsed 213 values 100.00%
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c   --check=true                   (different from default 'false')
+c   --lrat=true                    (different from default 'false')
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c time measured in process time since initialization
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue     remaining
+c 
+c *  0.00  4  0 0   0    0    0  0% 0  582 157 74%
+c l  0.00  4  0 0   0    0    0  0% 0  582 157 74%
+c 1  0.00  4  0 0   0    0    0  0% 0  582 157 74%
+c 
+c --- [ closing proof ] ------------------------------------------------------
+c 
+c LRAT proof file '../release/test-cnf-core-sqrt3481.prf' closed
+c LRAT 55 added clauses 100.00%
+c LRAT 0 deleted clauses 0.00%
+c LRAT 608 bytes (0.00 MB)
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s SATISFIABLE
+v 1 -2 3 4 5 6 -7 8 -9 -10 11 12 -13 -14 -15 16 -17 18 -19 -20 -21 -22 23 24
+v -25 -26 -27 28 -29 -30 31 -32 -33 -34 35 36 37 38 -39 40 -41 -42 -43 -44 45
+v -46 -47 48 -49 -50 51 52 -53 -54 -55 56 -57 -58 -59 60 61 62 -63 -64 65 -66
+v 67 -68 -69 -70 -71 72 -73 -74 75 -76 -77 78 -79 -80 81 82 -83 -84 -85 -86 87
+v -88 -89 90 91 -92 -93 94 95 -96 -97 98 -99 100 -101 -102 -103 104 -105 -106
+v 107 -108 -109 -110 111 112 -113 -114 -115 116 -117 -118 119 -120 -121 -122
+v 123 124 -125 -126 -127 -128 129 130 -131 132 -133 -134 135 -136 -137 138 139
+v -140 -141 -142 -143 144 145 -146 -147 -148 149 -150 -151 152 -153 -154 -155
+v 156 157 158 -159 -160 161 -162 -163 164 165 -166 -167 -168 -169 170 171 -172
+v -173 -174 -175 176 -177 -178 179 180 181 -182 -183 184 -185 -186 -187 -188
+v 189 190 -191 -192 -193 194 -195 -196 197 -198 -199 -200 -201 -202 203 204
+v 205 206 207 208 209 210 211 212 213 0
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         0.00  249.40% parse
+c         0.00  158.17% checking
+c         0.00    8.57% search
+c         0.00    8.17% lucky
+c         0.00    0.00% simplify
+c   =================================
+c         0.00   25.88% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c fixed:                        56        26.29 %  of all variables
+c lucky:                         1       100.00 %  of tried
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                      0         0.00 %  learned literals
+c minishrunken:                  0         0.00 %  learned literals
+c propagations:                 56         0.11 M  per second
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ lrat checker statistics ] --------------------------------------------
+c 
+c checks:                       55
+c insertions:                  638       100.00 %  of all clauses
+c original:                    583        91.38 %  of all clauses
+c derived:                      55         8.62 %  of all clauses
+c deleted:                       0         0.00 %  of all clauses
+c finalized:                   638       100.00 %  of all clauses
+c collections:                   0         0.00    deleted per collection
+c collisions:                  672         0.48    per search
+c searches:                   1392
+c 
+c --- [ checker statistics ] -------------------------------------------------
+c 
+c checks:                        0
+c assumptions:                   0         0.00    per check
+c propagations:                 56         0.00    per check
+c original:                    583        91.38 %  of all clauses
+c derived:                      55         8.62 %  of all clauses
+c deleted:                       0         0.00 %  of all clauses
+c insertions:                  582        91.22 %  of all clauses
+c collections:                   0         0.00    deleted per collection
+c collisions:                    0         0.00    per search
+c searches:                      0
+c units:                         1
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:         0.00    seconds
+c total real time since initialization:            0.00    seconds
+c maximum resident set size of process:            3.80    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 10

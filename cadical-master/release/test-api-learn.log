@@ -1,0 +1,12 @@
+solver[0x7ffded057ab0] imported clause of size 2: -2 -3
+solver[0x7ffded057ab0] imported clause of size 1: -3
+solver[0x7ffded057ab0] imported clause of size 1: 2
+solver[0x7ffded057ab0] imported clause of size 0:
+ping returns 20
+wong imported 4 clauses
+solver[0x7ffded057ae0] imported clause of size 2: -2 -3
+solver[0x7ffded057ae0] imported clause of size 1: -3
+solver[0x7ffded057ae0] imported clause of size 1: 2
+solver[0x7ffded057ae0] imported clause of size 0:
+pong returns 20
+wing imported 4 clauses

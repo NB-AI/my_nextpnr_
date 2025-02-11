@@ -1,0 +1,25 @@
+signature 'cadical-2.1.0'
+round 1 active 0 imported 0
+round 2 active 1 imported 16
+round 3 active 0 imported 29
+round 4 active 1 imported 31
+round 5 active 0 imported 62
+round 6 active 1 imported 65
+round 7 active 0 imported 103
+round 8 active 1 imported 70
+round 9 active 0 imported 123
+round 10 active 1 imported 91
+round 11 active 0 imported 145
+round 12 active 1 imported 137
+round 13 active 0 imported 165
+round 14 active 1 imported 180
+round 15 active 0 imported 197
+round 16 active 1 imported 217
+round 17 active 0 imported 247
+round 18 active 1 imported 244
+round 19 active 0 imported 290
+round 20 active 1 imported 292
+round 21 active 0 imported 352
+round 22 active 1 imported 345
+solver[0] imported 384 clauses
+solver[1] imported 345 clauses

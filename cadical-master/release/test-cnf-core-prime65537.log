@@ -1,0 +1,205 @@
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2024 A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt
+c 
+c Version 2.1.0
+c g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 -Wall -Wextra -O3 -DNDEBUG
+c Thu Dec 5 19:34:32 CET 2024 Linux c-HP-Pavilion-x360-Convertible-14-dh1xxx 5.15.0-125-generic x86_64
+c 
+c --- [ proof tracing ] ------------------------------------------------------
+c 
+c opening file to write '../release/test-cnf-core-prime65537.prf'
+c writing binary proof trace to '../release/test-cnf-core-prime65537.prf'
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from '../test/cnf/prime65537.cnf'
+c opening file to read '../test/cnf/prime65537.cnf'
+c found 'p cnf 1950 6220' header
+c parsed 6220 clauses in 0.01 seconds process time
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c   --check=true                   (different from default 'false')
+c   --lrat=true                    (different from default 'false')
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c time measured in process time since initialization
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue      remaining
+c 
+c *  0.01  6  0 0   0    0    0  0% 0 6218 1876 96%
+c {  0.01  6  0 0   0    0    0  0% 0 6218 1876 96%
+c i  0.01  6  1 0   0    1    0  5% 0 6218 1871 96%
+c i  0.01  6  1 0   0    2    0  5% 0 6218 1866 96%
+c i  0.01  6  1 0   0    3    0  6% 0 6218 1861 95%
+c i  0.01  6  1 0   1    4    0  6% 0 6218 1856 95%
+c i  0.01  6  1 0   1    5    0  6% 0 6218 1851 95%
+c i  0.01  6  1 0   1    6    0  6% 0 6218 1846 95%
+c i  0.01  6  1 0   2    7    0  6% 0 6218 1841 94%
+c i  0.01  6  1 0   2    8    0  6% 0 6218 1836 94%
+c i  0.01  6  1 0   2    9    0  6% 0 6218 1831 94%
+c i  0.01  6  1 0   3   10    0  6% 0 6218 1826 94%
+c i  0.01  6  1 0   3   11    0  7% 0 6218 1821 93%
+c i  0.01  6  1 0   3   12    0  7% 0 6218 1816 93%
+c i  0.01  6  1 0   4   13    0  7% 0 6218 1811 93%
+c i  0.01  6  1 0   4   14    0  7% 0 6218 1806 93%
+c i  0.01  6  1 0   4   15    0  8% 0 6218 1803 92%
+c i  0.01  6  1 0   5   16    0  8% 0 6218 1796 92%
+c i  0.01  6  3 0   5   18    1  9% 0 6218 1795 92%
+c i  0.01  7  8 0   9   43   24 45% 2 6218 1792 92%
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue      remaining
+c 
+c i  0.01  7  8 0   9   44   24 46% 2 6218 1789 92%
+c i  0.01  7  8 0  10   45   24 47% 2 6218 1786 92%
+c i  0.01  7  8 0  10   46   24 48% 2 6218 1783 91%
+c i  0.01  7  8 0  10   47   24 49% 2 6218 1780 91%
+c i  0.01  7  8 0  11   48   24 50% 2 6218 1777 91%
+c i  0.01  7 11 0  15   62   37 54% 2 6218 1774 91%
+c i  0.01  7 10 0  16   67   41 52% 2 6218 1763 90%
+c i  0.01  7 10 0  17   68   41 51% 2 6218 1755 90%
+c i  0.01  7 10 0  17   69   41 51% 2 6218 1751 90%
+c i  0.01  7 10 0  17   71   42 50% 2 6218 1748 90%
+c i  0.02  7 10 0  24   97   67 54% 2 6218 1745 89%
+c i  0.02  7  9 0  27  108   74 57% 2 6218 1722 88%
+c i  0.02  7  9 0  27  109   74 56% 2 6218 1638 84%
+c i  0.02  7  9 0  27  110   74 56% 2 6218 1628 83%
+c i  0.02  7 11 0  47  197  151 62% 3 6218 1625 83%
+c i  0.03  7 12 0  66  300  241 63% 4 6218 1504 77%
+c -  0.03  7 12 1  66  300  150 63% 4 4803 1504 77%
+c i  0.04  7 12 1  75  336  183 65% 4 4803 1401 72%
+c i  0.04  7 13 1  77  348  191 65% 4 4803 1400 72%
+c i  0.04  7 13 1  85  381  221 67% 5 4803 1393 71%
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue      remaining
+c 
+c i  0.04  7 13 1  87  391  230 67% 5 4803 1392 71%
+c i  0.05  7 13 1 111  493  323 69% 5 4803 1385 71%
+c i  0.05  7 13 1 116  513  340 69% 5 4803 1371 70%
+c i  0.05  7 13 1 117  516  341 69% 5 4803 1355 69%
+c i  0.06  7 13 1 117  596  406 71% 5 4803 1347 69%
+c i  0.06  7 12 1 117  638  436 72% 5 4803 1346 69%
+c i  0.06  7 12 1 117  643  439 72% 5 4803 1234 63%
+c i  0.06  7 12 1 117  670  464 73% 5 4803 1153 59%
+c i  0.07  7 12 1 125  760  541 75% 5 4803 1147 59%
+c i  0.07  7 12 1 133  790  561 75% 5 4803 1146 59%
+c i  0.07  7 12 1 136  801  570 75% 5 4803 1125 58%
+c i  0.07  7 12 1 139  812  580 75% 5 4803 1124 58%
+c -  0.09  7 11 2 148  901  452 76% 5 3551 1124 58%
+c i  0.09  7 11 2 148  911  461 76% 5 3551 1118 57%
+c i  0.09  7 11 2 148  983  512 76% 5 3551 1116 57%
+c }  0.09  7 11 2 148 1003  528 77% 5 3551 1116 57%
+c [  0.09  7  0 2 148 1003  528  0% 0 3551 1116 57%
+c O  0.09  7  3 2 148 1004  529 87% 1 3551 1116 57%
+c i  0.10  7  1 2 148 1007  530 92% 1 3551 1032 53%
+c i  0.12  7  4 2 148 1221  618 94% 4 3551 1016 52%
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue      remaining
+c 
+c i  0.13  7  4 2 148 1338  675 92% 3 3551 1015 52%
+c i  0.14  7  4 2 148 1407  709 91% 3 3551 1006 52%
+c i  0.14  7  4 2 148 1425  715 91% 3 3551 1003 51%
+c i  0.14  7  4 2 148 1431  717 91% 3 3551 985 51%
+c i  0.14  7  4 2 148 1436  720 91% 3 3551 888 46%
+c i  0.14  7  4 2 148 1439  722 91% 3 3551 623 32%
+c i  0.14  7  4 2 148 1441  723 91% 3 3551 362 19%
+c ]  0.15  7  4 2 148 1443  723 91% 3 3551  95  5%
+c 0  0.15  7  4 2 148 1443  723 91% 3 3551  95  5%
+c 
+c --- [ closing proof ] ------------------------------------------------------
+c 
+c LRAT proof file '../release/test-cnf-core-prime65537.prf' closed
+c LRAT 3491 added clauses 49.36%
+c LRAT 3581 deleted clauses 50.64%
+c LRAT 688708 bytes (0.66 MB)
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s UNSATISFIABLE
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         0.13   97.34% search
+c         0.08   60.36% unstable
+c         0.06   46.36% checking
+c         0.05   36.66% stable
+c         0.01    7.47% parse
+c         0.00    0.30% lucky
+c         0.00    0.00% simplify
+c   =================================
+c         0.14   92.90% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c chronological:               275        19.06 %  of conflicts
+c conflicts:                  1443     10434.37    per second
+c decisions:                  3580     25887.07    per second
+c fixed:                      1855        95.13 %  of all variables
+c learned:                    1394        96.60 %  per conflict
+c learned_lits:              41328       100.00 %  learned literals
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                  20293        49.10 %  learned literals
+c minishrunken:               4150        10.04 %  learned literals
+c otfs:                         14         0.97 %  of conflict
+c propagations:             500711         3.62 M  per second
+c reduced:                      25         1.73 %  per conflict
+c rephased:                      1      1443.00    interval
+c restarts:                    148         9.75    interval
+c stabilizing:                   1        30.49 %  of conflicts
+c subsumed:                    314         4.16 %  of all clauses
+c strengthened:                 14         0.19 %  of all clauses
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ lrat checker statistics ] --------------------------------------------
+c 
+c checks:                     3491
+c insertions:                 9711       100.00 %  of all clauses
+c original:                   6220        64.05 %  of all clauses
+c derived:                    3491        35.95 %  of all clauses
+c deleted:                    3581        36.88 %  of all clauses
+c finalized:                  6130        63.12 %  of all clauses
+c collections:                   0         0.00    deleted per collection
+c collisions:               130903         0.40    per search
+c searches:                 327829
+c 
+c --- [ checker statistics ] -------------------------------------------------
+c 
+c checks:                     1700
+c assumptions:               19564        11.51    per check
+c propagations:             782640       460.38    per check
+c original:                   6220        65.86 %  of all clauses
+c derived:                    3224        34.14 %  of all clauses
+c deleted:                    3581        37.92 %  of all clauses
+c insertions:                 7855        83.17 %  of all clauses
+c collections:                   0         0.00    deleted per collection
+c collisions:                   85         0.13    per search
+c searches:                    645
+c units:                        65
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:         0.15    seconds
+c total real time since initialization:            0.15    seconds
+c maximum resident set size of process:            7.07    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 20

@@ -1,0 +1,5 @@
+solver.solve () = 10
+solver.val (1) = 1
+solver.val (-1) = 1
+solver.val (2) = -2
+solver.val (3) = -3

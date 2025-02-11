@@ -1,0 +1,9 @@
+c [precochk] searching solution line in '../release/test-cnf-core-sqrt63001.log'
+c [precochk] found solution line 's SATISFIABLE'
+c [precochk] searching dimacs header in '../test/cnf/sqrt63001.cnf'
+c [precochk] found dimacs header 'p cnf 406 1140'
+c [precochk] searching for values in '../release/test-cnf-core-sqrt63001.log'
+c [precochk] found all 406 values
+c [precochk] solution file closed
+c [precochk] checked 1140 clauses
+c [precochk] satisfiable and solution correct

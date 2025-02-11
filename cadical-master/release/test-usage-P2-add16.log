@@ -1,0 +1,110 @@
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2024 A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt
+c 
+c Version 2.1.0
+c g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 -Wall -Wextra -O3 -DNDEBUG
+c Thu Dec 5 19:34:26 CET 2024 Linux c-HP-Pavilion-x360-Convertible-14-dh1xxx 5.15.0-125-generic x86_64
+c 
+c --- [ limit ] --------------------------------------------------------------
+c 
+c enabling 2 initial rounds of preprocessing (due to '-P2')
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from '../test/cnf/add16.cnf'
+c opening file to read '../test/cnf/add16.cnf'
+c found 'p cnf 330 895' header
+c parsed 895 clauses in 0.00 seconds process time
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c all options are set to their default value
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c time measured in process time since initialization
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue     remaining
+c 
+c *  0.00  4  0 0   0    0    0  0% 0  894 329 100%
+c p  0.00  4  0 0   0    0  255  0% 0  894 328 99%
+c e  0.00  4  0 0   0    0   36  0% 0  403  85 26%
+c s  0.00  4  0 0   0    0   36  0% 0  401  85 26%
+c P  0.00  4  0 0   0    0   36  0% 0  401  85 26%
+c 3  0.01  4  0 0   0    0  156  0% 0  401  85 26%
+c p  0.01  4  0 0   0    0  156  0% 0  401  85 26%
+c s  0.01  4  0 0   0    0  155  0% 0  398  85 26%
+c v  0.01  4  0 0   0    0  155  0% 0  345  85 26%
+c e  0.01  4  0 0   0    0  117  0% 0  281  66 20%
+c s  0.01  4  0 0   0    0  117  0% 0  273  66 20%
+c P  0.01  4  0 0   0    0  117  0% 0  273  66 20%
+c {  0.01  4  0 0   0    0  117  0% 0  273  66 20%
+c i  0.01  4 42 0   4  109  196 23% 4  272  65 20%
+c i  0.01  4 41 0   4  112  197 22% 3  272  64 19%
+c i  0.01  4 36 0   4  136  208 21% 4  272  62 19%
+c i  0.01  4 29 0   6  182  237 20% 4  272  59 18%
+c }  0.01  4 28 0   6  186  238 19% 4  272  53 16%
+c 0  0.01  4 28 0   6  186  238 19% 4  272  53 16%
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s UNSATISFIABLE
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         0.01   86.07% preprocess
+c         0.01   81.49% simplify
+c         0.00   48.42% elim
+c         0.00   12.56% search
+c         0.00   11.50% unstable
+c         0.00   11.34% vivify
+c         0.00    6.99% subsume
+c         0.00    5.87% ternary
+c         0.00    3.94% parse
+c         0.00    3.66% probe
+c         0.00    0.85% lucky
+c   =================================
+c         0.01   92.55% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c chronological:                73        39.25 %  of conflicts
+c conflicts:                   186     23174.68    per second
+c decisions:                   528     65786.19    per second
+c eliminated:                  260        78.79 %  of all variables
+c fixed:                        17         5.15 %  of all variables
+c learned:                     164        88.17 %  per conflict
+c learned_lits:               1290       100.00 %  learned literals
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                    213        16.51 %  learned literals
+c minishrunken:                 89         6.90 %  learned literals
+c otfs:                         30        16.13 %  of conflict
+c propagations:              16389         2.04 M  per second
+c restarts:                      6        31.00    interval
+c subsumed:                    192         6.67 %  of all clauses
+c strengthened:                191         6.63 %  of all clauses
+c ternary:                     204         8.41 %  of resolved
+c vivified:                     53         1.84 %  of all clauses
+c weakened:                    935         3.30    average size
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:         0.01    seconds
+c total real time since initialization:            0.01    seconds
+c maximum resident set size of process:            4.18    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 20

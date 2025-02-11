@@ -1,0 +1,139 @@
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2024 A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt
+c 
+c Version 2.1.0
+c g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 -Wall -Wextra -O3 -DNDEBUG
+c Thu Dec 5 19:34:32 CET 2024 Linux c-HP-Pavilion-x360-Convertible-14-dh1xxx 5.15.0-125-generic x86_64
+c 
+c --- [ proof tracing ] ------------------------------------------------------
+c 
+c opening file to write '../release/test-cnf-core-add64.prf'
+c writing binary proof trace to '../release/test-cnf-core-add64.prf'
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from '../test/cnf/add64.cnf'
+c opening file to read '../test/cnf/add64.cnf'
+c found 'p cnf 1428 3901' header
+c parsed 3901 clauses in 0.01 seconds process time
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c   --check=true                   (different from default 'false')
+c   --lrat=true                    (different from default 'false')
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c time measured in process time since initialization
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue      remaining
+c 
+c *  0.01  5  0 0   0    0    0  0% 0 3900 1427 100%
+c {  0.01  5  0 0   0    0    0  0% 0 3900 1427 100%
+c i  0.01  5 187 0   0   19   15 99% 1 3900 1424 100%
+c i  0.01  5 179 0   0   86   70 97% 2 3900 1408 99%
+c i  0.01  5 162 0   1  194  155 91% 2 3900 1392 97%
+c -  0.01  6 140 1   1  301  197 88% 1 3810 1392 97%
+c i  0.02  6 89 1  96  734  585 71% 2 3810 1390 97%
+c -  0.03  6 78 2 142  906  723 64% 2 3804 1390 97%
+c i  0.03  6 77 2 143  913  728 64% 2 3804 1387 97%
+c i  0.03  6 77 2 144  918  732 64% 2 3804 1379 97%
+c i  0.03  6 77 2 144  923  735 64% 2 3804 1375 96%
+c }  0.03  6 72 2 161 1002  801 61% 2 3804 1375 96%
+c [  0.03  6  0 2 161 1002  801  0% 0 3804 1375 96%
+c O  0.03  6 118 2 161 1003  802 94% 1 3804 1375 96%
+c i  0.04  6 74 2 161 1466 1180 63% 2 3804 1334 93%
+c i  0.04  6 73 2 161 1471 1183 62% 2 3804 1329 93%
+c i  0.04  6 73 2 161 1473 1184 62% 2 3804 1307 92%
+c ]  0.04  6 73 2 161 1478 1185 62% 2 3804 1285 90%
+c 0  0.04  6 73 2 161 1478 1185 62% 2 3804 1285 90%
+c 
+c --- [ closing proof ] ------------------------------------------------------
+c 
+c LRAT proof file '../release/test-cnf-core-add64.prf' closed
+c LRAT 1615 added clauses 80.83%
+c LRAT 383 deleted clauses 19.17%
+c LRAT 64070 bytes (0.06 MB)
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s UNSATISFIABLE
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         0.03   89.67% search
+c         0.02   65.68% unstable
+c         0.01   38.02% checking
+c         0.01   23.42% parse
+c         0.01   22.76% stable
+c         0.00    1.13% lucky
+c         0.00    0.00% simplify
+c   =================================
+c         0.03   80.66% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c chronological:               781        52.84 %  of conflicts
+c conflicts:                  1478     46887.89    per second
+c decisions:                 13586    431000.57    per second
+c fixed:                       143        10.01 %  of all variables
+c learned:                    1368        92.56 %  per conflict
+c learned_lits:               6426       100.00 %  learned literals
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                    681        10.60 %  learned literals
+c minishrunken:                246         3.83 %  learned literals
+c otfs:                         93         6.29 %  of conflict
+c propagations:             193378         6.13 M  per second
+c rephased:                      1      1478.00    interval
+c restarts:                    161         9.18    interval
+c stabilizing:                   1        32.14 %  of conflicts
+c subsumed:                     98         1.86 %  of all clauses
+c strengthened:                 92         1.75 %  of all clauses
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ lrat checker statistics ] --------------------------------------------
+c 
+c checks:                     1615
+c insertions:                 5516       100.00 %  of all clauses
+c original:                   3901        70.72 %  of all clauses
+c derived:                    1615        29.28 %  of all clauses
+c deleted:                     383         6.94 %  of all clauses
+c finalized:                  5133        93.06 %  of all clauses
+c collections:                   0         0.00    deleted per collection
+c collisions:                11247         0.35    per search
+c searches:                  32462
+c 
+c --- [ checker statistics ] -------------------------------------------------
+c 
+c checks:                     1482
+c assumptions:                5931         4.00    per check
+c propagations:              66219        44.68    per check
+c original:                   3901        71.02 %  of all clauses
+c derived:                    1592        28.98 %  of all clauses
+c deleted:                     383         6.97 %  of all clauses
+c insertions:                 5371        97.78 %  of all clauses
+c collections:                   0         0.00    deleted per collection
+c collisions:                    6         0.03    per search
+c searches:                    211
+c units:                        12
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:         0.04    seconds
+c total real time since initialization:            0.04    seconds
+c maximum resident set size of process:            6.23    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 20

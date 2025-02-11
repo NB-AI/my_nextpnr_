@@ -1,0 +1,1 @@
+cadical: error: ../test/usage/variable-too-large.cnf:2: parse error: literal 1 exceeds maximum variable 0

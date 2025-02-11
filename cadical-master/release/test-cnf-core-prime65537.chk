@@ -1,0 +1,21 @@
+c LRAT-TRIM Version 0.2.0 trims LRAT proofs
+c Copyright (c) 2023 Armin Biere University of Freiburg
+c reading CNF and LRAT files
+c backward checking trimmed clauses after trimming proof
+c reading CNF from '../test/cnf/prime65537.cnf'
+c found 'p cnf 1950 6220' header
+c parsed CNF with 6220 added clauses
+c parsing original CNF took 0.00 seconds and needed 2 MB memory
+c reading proof from '../release/test-cnf-core-prime65537.prf'
+c parsed original proof with 3491 added and 750 deleted clauses
+c parsing original proof took 0.00 seconds and needed 4 MB memory
+c trimmed 6220 original clauses in CNF to 5352 clauses 86%
+c trimmed 3491 added clauses in original proof to 2759 clauses 79%
+c trimming proof took 0.00 seconds
+c backward checking proof took 0.00 seconds
+s VERIFIED
+c checked 2759 clauses 246824 per second
+c resolved 275068 clauses 99.70 per checked clause
+c assigned 284887 literals 103.26 per checked clause
+c maximum memory usage of 4 MB
+c total time of 0.01 seconds

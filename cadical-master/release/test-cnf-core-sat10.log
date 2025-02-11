@@ -1,0 +1,117 @@
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2024 A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt
+c 
+c Version 2.1.0
+c g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 -Wall -Wextra -O3 -DNDEBUG
+c Thu Dec 5 19:34:32 CET 2024 Linux c-HP-Pavilion-x360-Convertible-14-dh1xxx 5.15.0-125-generic x86_64
+c 
+c --- [ proof tracing ] ------------------------------------------------------
+c 
+c opening file to write '../release/test-cnf-core-sat10.prf'
+c writing binary proof trace to '../release/test-cnf-core-sat10.prf'
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from '../test/cnf/sat10.cnf'
+c opening file to read '../test/cnf/sat10.cnf'
+c found 'p cnf 3 7' header
+c parsed 7 clauses in 0.00 seconds process time
+c 
+c --- [ parsing solution ] ---------------------------------------------------
+c 
+c reading solution file from '../test/cnf/sat10.sol'
+c opening file to read '../test/cnf/sat10.sol'
+c parsed 3 values 100.00%
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c   --check=true                   (different from default 'false')
+c   --lrat=true                    (different from default 'false')
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c time measured in process time since initialization
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue     remaining
+c 
+c *  0.00  2  0 0   0    0    0  0% 0    7   3 100%
+c l  0.00  2  0 0   0    0    0  0% 0    7   3 100%
+c 1  0.00  2  0 0   0    0    0  0% 0    7   3 100%
+c 
+c --- [ closing proof ] ------------------------------------------------------
+c 
+c LRAT proof file '../release/test-cnf-core-sat10.prf' closed
+c LRAT 0 added clauses 0.00%
+c LRAT 0 deleted clauses 0.00%
+c LRAT 0 bytes (0.00 MB)
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s SATISFIABLE
+v -1 2 3 0
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         0.00   57.32% parse
+c         0.00   26.83% search
+c         0.00   25.61% lucky
+c         0.00   14.63% checking
+c         0.00    0.00% simplify
+c   =================================
+c         0.00   31.91% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c lucky:                         1       100.00 %  of tried
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                      0         0.00 %  learned literals
+c minishrunken:                  0         0.00 %  learned literals
+c propagations:                  0         0.00 M  per second
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ lrat checker statistics ] --------------------------------------------
+c 
+c checks:                        0
+c insertions:                    7       100.00 %  of all clauses
+c original:                      7       100.00 %  of all clauses
+c derived:                       0         0.00 %  of all clauses
+c deleted:                       0         0.00 %  of all clauses
+c finalized:                     7       100.00 %  of all clauses
+c collections:                   0         0.00    deleted per collection
+c collisions:                    7         0.54    per search
+c searches:                     13
+c 
+c --- [ checker statistics ] -------------------------------------------------
+c 
+c checks:                        0
+c assumptions:                   0         0.00    per check
+c propagations:                  0         0.00    per check
+c original:                      7       100.00 %  of all clauses
+c derived:                       0         0.00 %  of all clauses
+c deleted:                       0         0.00 %  of all clauses
+c insertions:                    7       100.00 %  of all clauses
+c collections:                   0         0.00    deleted per collection
+c collisions:                    0         0.00    per search
+c searches:                      0
+c units:                         0
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:         0.00    seconds
+c total real time since initialization:            0.00    seconds
+c maximum resident set size of process:            2.22    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 10

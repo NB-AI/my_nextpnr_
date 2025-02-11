@@ -1,0 +1,9 @@
+c [precochk] searching solution line in '../release/test-cnf-core-prime25.log'
+c [precochk] found solution line 's SATISFIABLE'
+c [precochk] searching dimacs header in '../test/cnf/prime25.cnf'
+c [precochk] found dimacs header 'p cnf 131 370'
+c [precochk] searching for values in '../release/test-cnf-core-prime25.log'
+c [precochk] found all 131 values
+c [precochk] solution file closed
+c [precochk] checked 370 clauses
+c [precochk] satisfiable and solution correct

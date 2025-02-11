@@ -1,0 +1,2 @@
+c [run-simplifier-and-extend-solution.sh] input '../test/cnf/false.cnf'
+c [run-simplifier-and-extend-solution.sh] options ''

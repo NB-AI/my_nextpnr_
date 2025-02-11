@@ -1,0 +1,9 @@
+c [precochk] searching solution line in '../release/test-cnf-core-elimredundant.log'
+c [precochk] found solution line 's SATISFIABLE'
+c [precochk] searching dimacs header in '../test/cnf/elimredundant.cnf'
+c [precochk] found dimacs header 'p cnf 5 8'
+c [precochk] searching for values in '../release/test-cnf-core-elimredundant.log'
+c [precochk] found all 5 values
+c [precochk] solution file closed
+c [precochk] checked 8 clauses
+c [precochk] satisfiable and solution correct

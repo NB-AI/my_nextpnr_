@@ -1,0 +1,9 @@
+c [precochk] searching solution line in '../release/test-cnf-core-prime1849.log'
+c [precochk] found solution line 's SATISFIABLE'
+c [precochk] searching dimacs header in '../test/cnf/prime1849.cnf'
+c [precochk] found dimacs header 'p cnf 989 2908'
+c [precochk] searching for values in '../release/test-cnf-core-prime1849.log'
+c [precochk] found all 989 values
+c [precochk] solution file closed
+c [precochk] checked 2908 clauses
+c [precochk] satisfiable and solution correct

@@ -1,0 +1,1 @@
+run-simplifier-and-extend-solution.sh: error: can not find '../release/../scripts/../build/cadical' (build solver first)

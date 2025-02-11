@@ -1,0 +1,2 @@
+c [run-simplifier-and-extend-solution.sh] input '../test/cnf/sat12.cnf'
+c [run-simplifier-and-extend-solution.sh] options ''

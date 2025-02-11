@@ -1,0 +1,2 @@
+c [run-simplifier-and-extend-solution.sh] input '../test/cnf/unit1.cnf'
+c [run-simplifier-and-extend-solution.sh] options ''

@@ -1,0 +1,9 @@
+c [precochk] searching solution line in '../release/test-cnf-core-factor2708413neg.log'
+c [precochk] found solution line 's SATISFIABLE'
+c [precochk] searching dimacs header in '../test/cnf/factor2708413neg.cnf'
+c [precochk] found dimacs header 'p cnf 1123 3111'
+c [precochk] searching for values in '../release/test-cnf-core-factor2708413neg.log'
+c [precochk] found all 1123 values
+c [precochk] solution file closed
+c [precochk] checked 3111 clauses
+c [precochk] satisfiable and solution correct

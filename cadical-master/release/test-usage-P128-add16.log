@@ -1,0 +1,137 @@
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2024 A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt
+c 
+c Version 2.1.0
+c g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 -Wall -Wextra -O3 -DNDEBUG
+c Thu Dec 5 19:34:26 CET 2024 Linux c-HP-Pavilion-x360-Convertible-14-dh1xxx 5.15.0-125-generic x86_64
+c 
+c --- [ limit ] --------------------------------------------------------------
+c 
+c enabling 128 initial rounds of preprocessing (due to '-P128')
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from '../test/cnf/add16.cnf'
+c opening file to read '../test/cnf/add16.cnf'
+c found 'p cnf 330 895' header
+c parsed 895 clauses in 0.00 seconds process time
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c all options are set to their default value
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c time measured in process time since initialization
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue     remaining
+c 
+c *  0.00  4  0 0   0    0    0  0% 0  894 329 100%
+c p  0.00  4  0 0   0    0  255  0% 0  894 328 99%
+c e  0.00  4  0 0   0    0   36  0% 0  403  85 26%
+c s  0.00  4  0 0   0    0   36  0% 0  401  85 26%
+c P  0.00  4  0 0   0    0   36  0% 0  401  85 26%
+c 3  0.00  4  0 0   0    0  156  0% 0  401  85 26%
+c p  0.00  4  0 0   0    0  156  0% 0  401  85 26%
+c s  0.00  4  0 0   0    0  155  0% 0  398  85 26%
+c v  0.01  4  0 0   0    0  155  0% 0  345  85 26%
+c e  0.01  4  0 0   0    0  117  0% 0  281  66 20%
+c s  0.01  4  0 0   0    0  117  0% 0  273  66 20%
+c P  0.01  4  0 0   0    0  117  0% 0  273  66 20%
+c v  0.01  4  0 0   0    0  130  0% 0  271  66 20%
+c ^  0.01  4  0 0   0    0  130  0% 0  271  66 20%
+c P  0.01  4  0 0   0    0  130  0% 0  271  66 20%
+c ^  0.01  4  0 0   0    0  140  0% 0  271  66 20%
+c P  0.01  4  0 0   0    0  140  0% 0  271  66 20%
+c ^  0.01  4  0 0   0    0  140  0% 0  271  66 20%
+c P  0.01  4  0 0   0    0  140  0% 0  271  66 20%
+c e  0.01  4  0 0   0    0  102  0% 0  281  62 19%
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue     remaining
+c 
+c s  0.01  4  0 0   0    0  102  0% 0  269  62 19%
+c P  0.01  4  0 0   0    0  102  0% 0  269  62 19%
+c 2  0.01  4  0 0   0    0  107  0% 0  269  62 19%
+c v  0.01  4  0 0   0    0  107  0% 0  265  62 19%
+c t  0.01  4  0 0   0    0  107  0% 0  264  62 19%
+c e  0.01  4  0 0   0    0   96  0% 0  261  58 18%
+c s  0.01  4  0 0   0    0   96  0% 0  253  58 18%
+c P  0.01  4  0 0   0    0   96  0% 0  253  58 18%
+c 3  0.01  4  0 0   0    0  122  0% 0  253  58 18%
+c 2  0.01  4  0 0   0    0  121  0% 0  253  58 18%
+c s  0.01  4  0 0   0    0  121  0% 0  251  58 18%
+c v  0.01  4  0 0   0    0  121  0% 0  231  56 17%
+c e  0.01  4  0 0   0    0  116  0% 0  227  53 16%
+c s  0.01  4  0 0   0    0  116  0% 0  217  53 16%
+c e  0.02  4  0 0   0    0  111  0% 0  193  48 15%
+c P  0.02  4  0 0   0    0  111  0% 0  193  48 15%
+c s  0.02  4  0 0   0    0  121  0% 0  191  48 15%
+c v  0.02  4  0 0   0    0  121  0% 0  191  48 15%
+c e  0.02  4  0 0   0    0  106  0% 0  153  38 12%
+c ^  0.02  4  0 0   0    0  106  0% 0  153  38 12%
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue     remaining
+c 
+c P  0.02  4  0 0   0    0  106  0% 0  153  38 12%
+c v  0.02  4  0 0   0    0  111  0% 0  153  38 12%
+c e  0.02  4  0 0   0    0  111  0% 0    4   0  0%
+c P  0.02  4  0 0   0    0  111  0% 0    4   0  0%
+c 0  0.02  4  0 0   0    0  111  0% 0    4   0  0%
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s UNSATISFIABLE
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         0.02   98.67% preprocess
+c         0.02   91.78% simplify
+c         0.01   45.53% elim
+c         0.00   23.55% vivify
+c         0.00    6.81% ternary
+c         0.00    5.80% subsume
+c         0.00    3.31% probe
+c         0.00    1.84% parse
+c         0.00    0.00% search
+c   =================================
+c         0.02   97.75% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c eliminated:                  312        94.55 %  of all variables
+c fixed:                        18         5.45 %  of all variables
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                      0         0.00 %  learned literals
+c minishrunken:                  0         0.00 %  learned literals
+c propagations:              30458         1.76 M  per second
+c subsumed:                    332         9.34 %  of all clauses
+c strengthened:                476        13.39 %  of all clauses
+c ternary:                     276         7.20 %  of resolved
+c vivified:                    117         3.29 %  of all clauses
+c weakened:                   1403         4.03    average size
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:         0.02    seconds
+c total real time since initialization:            0.02    seconds
+c maximum resident set size of process:            4.28    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 20

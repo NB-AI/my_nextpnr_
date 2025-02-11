@@ -1,0 +1,190 @@
+c opening file to write '../release/test-api-apitrace-inctrace1.drup'
+c [preprocessing-1] starting round 0 with 3 variables and 1 clauses
+c [elim-phase-1] starting at most 2 elimination rounds
+c [elim-round-1] limit of 10000000 resolutions
+c [elim-round-1] scheduled 3 variables 100% for elimination
+c [elim-round-1] tried to eliminate 3 variables 100% (0 remain)
+c [elim-round-1] eliminated 3 variables 100% in 0 resolutions
+c [elim-phase-1] no new variable elimination candidates
+c [elim-phase-1] fully completed elimination 1 at elimination bound 0
+c [elim-phase-1] new elimination bound 1
+c [elim-phase-1] eliminated 3 variables 100.00%
+c [preprocessing-1] finished round 0 with 0 variables and 0 clauses
+c [preprocessing-2] starting round 1 with 0 variables and 0 clauses
+c [elim-phase-2] starting at most 2 elimination rounds
+c [elim-round-2] limit of 10000000 resolutions
+c [elim-round-2] scheduled 0 variables 0% for elimination
+c [elim-round-2] tried to eliminate 0 variables 0% (0 remain)
+c [elim-round-2] eliminated 0 variables 0% in 0 resolutions
+c [elim-phase-2] no new variable elimination candidates
+c [elim-phase-2] fully completed elimination 2 at elimination bound 1
+c [elim-phase-2] new elimination bound 2
+c [elim-phase-2] eliminated 0 variables 0.00%
+c [preprocessing-2] finished round 1 with 0 variables and 0 clauses
+c [preprocessing-3] starting round 2 with 0 variables and 0 clauses
+c [elim-phase-3] starting at most 2 elimination rounds
+c [elim-round-3] limit of 10000000 resolutions
+c [elim-round-3] scheduled 0 variables 0% for elimination
+c [elim-round-3] tried to eliminate 0 variables 0% (0 remain)
+c [elim-round-3] eliminated 0 variables 0% in 0 resolutions
+c [elim-phase-3] no new variable elimination candidates
+c [elim-phase-3] fully completed elimination 3 at elimination bound 2
+c [elim-phase-3] new elimination bound 4
+c [elim-phase-3] eliminated 0 variables 0.00%
+c [preprocessing-3] finished round 2 with 0 variables and 0 clauses
+c [collect-0] collected 40 bytes of 1 garbage clauses
+c [restore-1] starting with 1 tainted literals 17%
+c [restore-1] no satisfied clause removed out of 1 weakened clauses
+c [restore-1] restored 1 clauses 100% out of 1 weakened clauses
+c [restore-1] finishing with 1 tainted literals 17%
+c forward assuming variables true satisfies formula
+c [extend-1] mapping internal 3 assignments to 3 assignments
+c [extend-1] updated 3 external assignments
+c [extend-1] extending through extension stack of size 0
+c [extend-1] flipped 0 literals during extension
+c closing file '../release/test-api-apitrace-inctrace1.drup'
+c after writing 10 bytes 0.0 MB
+c DRAT proof file '../release/test-api-apitrace-inctrace1.drup' closed
+c DRAT 0 added clauses 0.00%
+c DRAT 1 deleted clauses 100.00%
+c DRAT 10 bytes (0.00 MB)
+c opening file to write '../release/test-api-apitrace-inctrace1.lrat'
+c [preprocessing-1] starting round 0 with 3 variables and 1 clauses
+c [elim-phase-1] starting at most 2 elimination rounds
+c [elim-round-1] limit of 10000000 resolutions
+c [elim-round-1] scheduled 3 variables 100% for elimination
+c [elim-round-1] tried to eliminate 3 variables 100% (0 remain)
+c [elim-round-1] eliminated 3 variables 100% in 0 resolutions
+c [elim-phase-1] no new variable elimination candidates
+c [elim-phase-1] fully completed elimination 1 at elimination bound 0
+c [elim-phase-1] new elimination bound 1
+c [elim-phase-1] eliminated 3 variables 100.00%
+c [preprocessing-1] finished round 0 with 0 variables and 0 clauses
+c [preprocessing-2] starting round 1 with 0 variables and 0 clauses
+c [elim-phase-2] starting at most 2 elimination rounds
+c [elim-round-2] limit of 10000000 resolutions
+c [elim-round-2] scheduled 0 variables 0% for elimination
+c [elim-round-2] tried to eliminate 0 variables 0% (0 remain)
+c [elim-round-2] eliminated 0 variables 0% in 0 resolutions
+c [elim-phase-2] no new variable elimination candidates
+c [elim-phase-2] fully completed elimination 2 at elimination bound 1
+c [elim-phase-2] new elimination bound 2
+c [elim-phase-2] eliminated 0 variables 0.00%
+c [preprocessing-2] finished round 1 with 0 variables and 0 clauses
+c [preprocessing-3] starting round 2 with 0 variables and 0 clauses
+c [elim-phase-3] starting at most 2 elimination rounds
+c [elim-round-3] limit of 10000000 resolutions
+c [elim-round-3] scheduled 0 variables 0% for elimination
+c [elim-round-3] tried to eliminate 0 variables 0% (0 remain)
+c [elim-round-3] eliminated 0 variables 0% in 0 resolutions
+c [elim-phase-3] no new variable elimination candidates
+c [elim-phase-3] fully completed elimination 3 at elimination bound 2
+c [elim-phase-3] new elimination bound 4
+c [elim-phase-3] eliminated 0 variables 0.00%
+c [preprocessing-3] finished round 2 with 0 variables and 0 clauses
+c [collect-0] collected 40 bytes of 1 garbage clauses
+c [restore-1] starting with 1 tainted literals 17%
+c [restore-1] no satisfied clause removed out of 1 weakened clauses
+c [restore-1] restored 1 clauses 100% out of 1 weakened clauses
+c [restore-1] finishing with 1 tainted literals 17%
+c forward assuming variables true satisfies formula
+c [extend-1] mapping internal 3 assignments to 3 assignments
+c [extend-1] updated 3 external assignments
+c [extend-1] extending through extension stack of size 0
+c [extend-1] flipped 0 literals during extension
+c closing file '../release/test-api-apitrace-inctrace1.lrat'
+c after writing 0 bytes 0.0 MB
+c LRAT proof file '../release/test-api-apitrace-inctrace1.lrat' closed
+c LRAT 0 added clauses 0.00%
+c LRAT 1 deleted clauses 100.00%
+c LRAT 0 bytes (0.00 MB)
+c opening file to write '../release/test-api-apitrace-inctrace2.drup'
+c [preprocessing-1] starting round 0 with 3 variables and 4 clauses
+c [elim-phase-1] starting at most 2 elimination rounds
+c [elim-round-1] limit of 10000000 resolutions
+c [elim-round-1] scheduled 3 variables 100% for elimination
+c [elim-round-1] tried to eliminate 3 variables 100% (0 remain)
+c [elim-round-1] eliminated 3 variables 100% in 0 resolutions
+c [elim-phase-1] no new variable elimination candidates
+c [elim-phase-1] fully completed elimination 1 at elimination bound 0
+c [elim-phase-1] new elimination bound 1
+c [elim-phase-1] eliminated 3 variables 100.00%
+c [preprocessing-1] finished round 0 with 0 variables and 0 clauses
+c [preprocessing-2] starting round 1 with 0 variables and 0 clauses
+c [elim-phase-2] starting at most 2 elimination rounds
+c [elim-round-2] limit of 10000000 resolutions
+c [elim-round-2] scheduled 0 variables 0% for elimination
+c [elim-round-2] tried to eliminate 0 variables 0% (0 remain)
+c [elim-round-2] eliminated 0 variables 0% in 0 resolutions
+c [elim-phase-2] no new variable elimination candidates
+c [elim-phase-2] fully completed elimination 2 at elimination bound 1
+c [elim-phase-2] new elimination bound 2
+c [elim-phase-2] eliminated 0 variables 0.00%
+c [preprocessing-2] finished round 1 with 0 variables and 0 clauses
+c [preprocessing-3] starting round 2 with 0 variables and 0 clauses
+c [elim-phase-3] starting at most 2 elimination rounds
+c [elim-round-3] limit of 10000000 resolutions
+c [elim-round-3] scheduled 0 variables 0% for elimination
+c [elim-round-3] tried to eliminate 0 variables 0% (0 remain)
+c [elim-round-3] eliminated 0 variables 0% in 0 resolutions
+c [elim-phase-3] no new variable elimination candidates
+c [elim-phase-3] fully completed elimination 3 at elimination bound 2
+c [elim-phase-3] new elimination bound 4
+c [elim-phase-3] eliminated 0 variables 0.00%
+c [preprocessing-3] finished round 2 with 0 variables and 0 clauses
+c [collect-0] collected 160 bytes of 4 garbage clauses
+c [restore-1] starting with 1 tainted literals 17%
+c [restore-1] no satisfied clause removed out of 4 weakened clauses
+c [restore-1] restored 4 clauses 100% out of 4 weakened clauses
+c [restore-1] finishing with 1 tainted literals 17%
+c closing file '../release/test-api-apitrace-inctrace2.drup'
+c after writing 126 bytes 0.0 MB
+c DRAT proof file '../release/test-api-apitrace-inctrace2.drup' closed
+c DRAT 6 added clauses 42.86%
+c DRAT 8 deleted clauses 57.14%
+c DRAT 126 bytes (0.00 MB)
+c opening file to write '../release/test-api-apitrace-inctrace2.lrat'
+c [preprocessing-1] starting round 0 with 3 variables and 4 clauses
+c [elim-phase-1] starting at most 2 elimination rounds
+c [elim-round-1] limit of 10000000 resolutions
+c [elim-round-1] scheduled 3 variables 100% for elimination
+c [elim-round-1] tried to eliminate 3 variables 100% (0 remain)
+c [elim-round-1] eliminated 3 variables 100% in 0 resolutions
+c [elim-phase-1] no new variable elimination candidates
+c [elim-phase-1] fully completed elimination 1 at elimination bound 0
+c [elim-phase-1] new elimination bound 1
+c [elim-phase-1] eliminated 3 variables 100.00%
+c [preprocessing-1] finished round 0 with 0 variables and 0 clauses
+c [preprocessing-2] starting round 1 with 0 variables and 0 clauses
+c [elim-phase-2] starting at most 2 elimination rounds
+c [elim-round-2] limit of 10000000 resolutions
+c [elim-round-2] scheduled 0 variables 0% for elimination
+c [elim-round-2] tried to eliminate 0 variables 0% (0 remain)
+c [elim-round-2] eliminated 0 variables 0% in 0 resolutions
+c [elim-phase-2] no new variable elimination candidates
+c [elim-phase-2] fully completed elimination 2 at elimination bound 1
+c [elim-phase-2] new elimination bound 2
+c [elim-phase-2] eliminated 0 variables 0.00%
+c [preprocessing-2] finished round 1 with 0 variables and 0 clauses
+c [preprocessing-3] starting round 2 with 0 variables and 0 clauses
+c [elim-phase-3] starting at most 2 elimination rounds
+c [elim-round-3] limit of 10000000 resolutions
+c [elim-round-3] scheduled 0 variables 0% for elimination
+c [elim-round-3] tried to eliminate 0 variables 0% (0 remain)
+c [elim-round-3] eliminated 0 variables 0% in 0 resolutions
+c [elim-phase-3] no new variable elimination candidates
+c [elim-phase-3] fully completed elimination 3 at elimination bound 2
+c [elim-phase-3] new elimination bound 4
+c [elim-phase-3] eliminated 0 variables 0.00%
+c [preprocessing-3] finished round 2 with 0 variables and 0 clauses
+c [collect-0] collected 160 bytes of 4 garbage clauses
+c [restore-1] starting with 1 tainted literals 17%
+c [restore-1] no satisfied clause removed out of 4 weakened clauses
+c [restore-1] restored 4 clauses 100% out of 4 weakened clauses
+c [restore-1] finishing with 1 tainted literals 17%
+c closing file '../release/test-api-apitrace-inctrace2.lrat'
+c after writing 133 bytes 0.0 MB
+c LRAT proof file '../release/test-api-apitrace-inctrace2.lrat' closed
+c LRAT 6 added clauses 42.86%
+c LRAT 8 deleted clauses 57.14%
+c LRAT 133 bytes (0.00 MB)

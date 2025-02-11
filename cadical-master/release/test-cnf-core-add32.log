@@ -1,0 +1,137 @@
+c --- [ banner ] -------------------------------------------------------------
+c 
+c CaDiCaL SAT Solver
+c Copyright (c) 2016-2024 A. Biere, M. Fleury, N. Froleyks, K. Fazekas, F. Pollitt
+c 
+c Version 2.1.0
+c g++ (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0 -Wall -Wextra -O3 -DNDEBUG
+c Thu Dec 5 19:34:32 CET 2024 Linux c-HP-Pavilion-x360-Convertible-14-dh1xxx 5.15.0-125-generic x86_64
+c 
+c --- [ proof tracing ] ------------------------------------------------------
+c 
+c opening file to write '../release/test-cnf-core-add32.prf'
+c writing binary proof trace to '../release/test-cnf-core-add32.prf'
+c 
+c --- [ parsing input ] ------------------------------------------------------
+c 
+c reading DIMACS file from '../test/cnf/add32.cnf'
+c opening file to read '../test/cnf/add32.cnf'
+c found 'p cnf 695 1894' header
+c parsed 1894 clauses in 0.00 seconds process time
+c 
+c --- [ options ] ------------------------------------------------------------
+c 
+c   --check=true                   (different from default 'false')
+c   --lrat=true                    (different from default 'false')
+c 
+c --- [ solving ] ------------------------------------------------------------
+c 
+c time measured in process time since initialization
+c 
+c  seconds  reductions  redundant irredundant
+c         MB    restarts       trail    variables
+c          level   conflicts       glue     remaining
+c 
+c *  0.00  4  0 0   0    0    0  0% 0 1893 694 100%
+c {  0.00  4  0 0   0    0    0  0% 0 1893 694 100%
+c i  0.00  4 90 0   0   19   15 97% 1 1893 691 99%
+c i  0.01  4 82 0   0   86   70 93% 2 1893 675 97%
+c i  0.01  5 69 0   1  194  155 84% 2 1893 659 95%
+c -  0.01  5 60 1  16  301  195 82% 2 1803 659 95%
+c i  0.01  5 49 1  44  420  302 74% 2 1803 658 95%
+c i  0.01  5 47 1  47  443  319 72% 2 1803 655 94%
+c i  0.01  5 46 1  47  460  331 71% 2 1803 651 94%
+c i  0.01  5 46 1  47  466  333 71% 2 1803 639 92%
+c i  0.01  5 39 1  69  600  449 64% 2 1803 636 92%
+c i  0.01  5 37 1  72  638  477 62% 2 1803 624 90%
+c i  0.01  5 37 1  72  642  480 62% 2 1803 623 90%
+c i  0.01  5 37 1  72  645  482 62% 2 1803 619 89%
+c i  0.01  5 37 1  72  646  482 62% 2 1803 616 89%
+c i  0.01  5 37 1  72  649  484 62% 2 1803 611 88%
+c i  0.01  5 36 1  72  650  484 62% 2 1803 608 87%
+c i  0.01  5 36 1  72  651  484 62% 2 1803 599 86%
+c }  0.01  5 36 1  72  653  484 62% 2 1803 573 82%
+c 0  0.02  5 36 1  72  653  484 62% 2 1803 573 82%
+c 
+c --- [ closing proof ] ------------------------------------------------------
+c 
+c LRAT proof file '../release/test-cnf-core-add32.prf' closed
+c LRAT 762 added clauses 75.60%
+c LRAT 246 deleted clauses 24.40%
+c LRAT 28268 bytes (0.03 MB)
+c 
+c --- [ result ] -------------------------------------------------------------
+c 
+s UNSATISFIABLE
+c 
+c --- [ run-time profiling ] -------------------------------------------------
+c 
+c process time taken by individual solving procedures
+c (percentage relative to process time for solving)
+c 
+c         0.01   85.22% search
+c         0.01   83.47% unstable
+c         0.01   46.72% checking
+c         0.00   31.17% parse
+c         0.00    1.55% lucky
+c         0.00    0.00% simplify
+c   =================================
+c         0.01   75.13% solve
+c 
+c last line shows process time for solving
+c (percentage relative to total process time)
+c 
+c --- [ statistics ] ---------------------------------------------------------
+c 
+c chronological:               336        51.45 %  of conflicts
+c conflicts:                   653     53162.91    per second
+c decisions:                  3228    262802.25    per second
+c fixed:                       122        17.55 %  of all variables
+c learned:                     612        93.72 %  per conflict
+c learned_lits:               2702       100.00 %  learned literals
+c minimized:                     0         0.00 %  learned literals
+c shrunken:                    433        16.03 %  learned literals
+c minishrunken:                 91         3.37 %  learned literals
+c otfs:                         27         4.13 %  of conflict
+c propagations:              45657         3.72 M  per second
+c restarts:                     72         9.07    interval
+c subsumed:                     50         2.01 %  of all clauses
+c strengthened:                 25         1.00 %  of all clauses
+c 
+c seconds are measured in process time for solving
+c 
+c --- [ lrat checker statistics ] --------------------------------------------
+c 
+c checks:                      762
+c insertions:                 2656       100.00 %  of all clauses
+c original:                   1894        71.31 %  of all clauses
+c derived:                     762        28.69 %  of all clauses
+c deleted:                     246         9.26 %  of all clauses
+c finalized:                  2410        90.74 %  of all clauses
+c collections:                   0         0.00    deleted per collection
+c collisions:                 5120         0.34    per search
+c searches:                  14869
+c 
+c --- [ checker statistics ] -------------------------------------------------
+c 
+c checks:                      657
+c assumptions:                2309         3.51    per check
+c propagations:              23561        35.86    per check
+c original:                   1894        72.02 %  of all clauses
+c derived:                     736        27.98 %  of all clauses
+c deleted:                     246         9.35 %  of all clauses
+c insertions:                 2533        96.31 %  of all clauses
+c collections:                   0         0.00    deleted per collection
+c collisions:                    6         0.06    per search
+c searches:                     93
+c units:                        18
+c 
+c --- [ resources ] ----------------------------------------------------------
+c 
+c total process time since initialization:         0.02    seconds
+c total real time since initialization:            0.02    seconds
+c maximum resident set size of process:            5.14    MB
+c 
+c --- [ shutting down ] ------------------------------------------------------
+c 
+c exit 20

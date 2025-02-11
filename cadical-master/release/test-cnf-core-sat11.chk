@@ -1,0 +1,9 @@
+c [precochk] searching solution line in '../release/test-cnf-core-sat11.log'
+c [precochk] found solution line 's SATISFIABLE'
+c [precochk] searching dimacs header in '../test/cnf/sat11.cnf'
+c [precochk] found dimacs header 'p cnf 3 7'
+c [precochk] searching for values in '../release/test-cnf-core-sat11.log'
+c [precochk] found all 3 values
+c [precochk] solution file closed
+c [precochk] checked 7 clauses
+c [precochk] satisfiable and solution correct

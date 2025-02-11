@@ -1,0 +1,2 @@
+c [run-simplifier-and-extend-solution.sh] input '../test/cnf/factor2708413neg.cnf'
+c [run-simplifier-and-extend-solution.sh] options ''
