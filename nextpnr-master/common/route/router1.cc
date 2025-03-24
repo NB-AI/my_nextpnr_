@@ -238,11 +238,11 @@ struct Router1
 
     TimingAnalyser tmg;
 
-    bool timing_driven = true;
+    bool timing_driven = false; //true;
 
     Router1(Context *ctx, const Router1Cfg &cfg) : ctx(ctx), cfg(cfg), tmg(ctx)
     {
-        timing_driven = ctx->setting<bool>("timing_driven");
+        timing_driven = false; //ctx->setting<bool>("timing_driven");
         tmg.setup_only = false;
         tmg.with_clock_skew = true;
         tmg.setup();
@@ -312,109 +312,6 @@ struct Router1
         return entry.arc;
     }
 
-    void ripup_net(NetInfo *net)
-    {
-        if (ctx->debug)
-            log("      ripup net %s\n", ctx->nameOf(net));
-
-        netScores[net]++;
-
-        std::vector<WireId> wires;
-        for (auto &it : net->wires)
-            wires.push_back(it.first);
-
-        ctx->sorted_shuffle(wires);
-
-        for (WireId w : wires) {
-            std::vector<arc_key> arcs;
-            for (auto &it : wire_to_arcs[w]) {
-                arc_to_wires[it].erase(w);
-                arcs.push_back(it);
-            }
-            wire_to_arcs[w].clear();
-
-            ctx->sorted_shuffle(arcs);
-
-            for (auto &it : arcs)
-                arc_queue_insert(it);
-
-            if (ctx->debug)
-                log("        unbind wire %s\n", ctx->nameOfWire(w));
-
-            ctx->unbindWire(w);
-            wireScores[w]++;
-        }
-
-        ripup_flag = true;
-    }
-
-    void ripup_wire(WireId wire, int extra_indent = 0)
-    {
-        if (ctx->debug)
-            log("    ripup wire %s\n", ctx->nameOfWire(wire));
-
-        WireId w = ctx->getConflictingWireWire(wire);
-
-        if (w == WireId()) {
-            NetInfo *n = ctx->getConflictingWireNet(wire);
-            if (n != nullptr)
-                ripup_net(n);
-        } else {
-            std::vector<arc_key> arcs;
-            for (auto &it : wire_to_arcs[w]) {
-                arc_to_wires[it].erase(w);
-                arcs.push_back(it);
-            }
-            wire_to_arcs[w].clear();
-
-            ctx->sorted_shuffle(arcs);
-
-            for (auto &it : arcs)
-                arc_queue_insert(it);
-
-            if (ctx->debug)
-                log("      unbind wire %s\n", ctx->nameOfWire(w));
-
-            ctx->unbindWire(w);
-            wireScores[w]++;
-        }
-
-        ripup_flag = true;
-    }
-
-    void ripup_pip(PipId pip)
-    {
-        if (ctx->debug)
-            log("    ripup pip %s\n", ctx->nameOfPip(pip));
-
-        WireId w = ctx->getConflictingPipWire(pip);
-
-        if (w == WireId()) {
-            NetInfo *n = ctx->getConflictingPipNet(pip);
-            if (n != nullptr)
-                ripup_net(n);
-        } else {
-            std::vector<arc_key> arcs;
-            for (auto &it : wire_to_arcs[w]) {
-                arc_to_wires[it].erase(w);
-                arcs.push_back(it);
-            }
-            wire_to_arcs[w].clear();
-
-            ctx->sorted_shuffle(arcs);
-
-            for (auto &it : arcs)
-                arc_queue_insert(it);
-
-            if (ctx->debug)
-                log("      unbind wire %s\n", ctx->nameOfWire(w));
-
-            ctx->unbindWire(w);
-            wireScores[w]++;
-        }
-
-        ripup_flag = true;
-    }
 
     bool skip_net(NetInfo *net_info)
     {
@@ -600,7 +497,32 @@ struct Router1
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+int my_wire_no(WireId wire, bool wire_type_13)
+{
+    std::string wire_name = ctx->nameOfWire(wire);
+
+
+    int wire_no = -1;
+
+    int find_start_wire_no = wire_name.find(":in_");
+
+    int find_end_wire_no;
+    if(wire_type_13)
+        find_end_wire_no = wire_name.find("_lut");
+
+    else // but wire type 12
+        find_end_wire_no = static_cast<int>(wire_name.size());
+
+    int len_number = find_end_wire_no - (find_start_wire_no + 4);
+    std::string wire_no_string = wire_name.substr(find_start_wire_no + 4, len_number);
+     std::stringstream wire_no_string_ss(wire_no_string);
+    wire_no_string_ss >> wire_no; // intra_coord gets its value here
+
+    return wire_no;
+}
+
 	int my_intra_coord_finder(WireId wire, PipId pip){
+
 
 		//// different wire types in the iCE40:
 
@@ -642,9 +564,23 @@ struct Router1
 
 		std::string wire_name = ctx->nameOfWire(wire);
 
-        Loc loc = ctx->getPipLocation(pip);
-		int pip_end_x = loc.x;
-		int pip_end_y = loc.y;
+        int find_not_happen = wire_name.find("neigh_op_");
+        if(find_not_happen != -1){log_info("ALERT: new wire type! %s\n", ctx->nameOfWire(wire));}
+
+        int pip_end_x;
+        int pip_end_y;
+
+        if(pip != PipId()){
+
+            Loc loc = ctx->getPipLocation(pip);
+		    pip_end_x = loc.x;
+            pip_end_y = loc.y;
+        }
+        else{
+
+            pip_end_x = -1;
+            pip_end_y = -1;
+        }
 
    		int intra_coord = -1;
 
@@ -1021,6 +957,15 @@ struct Router1
         
         auto dst_wire = ctx->getNetinfoSinkWire(net_info, net_info->users[arc.user_idx], arc.phys_idx);
 
+        // find out wire no of dst_wire:
+        int type_dst = my_intra_coord_finder(dst_wire, PipId());
+        int dst_wire_no = -1;
+        if(type_dst >= 20){
+            
+            dst_wire_no = my_wire_no(dst_wire, true);
+            log_info("h3: dst wire %s with wire no %d\n", ctx->nameOfWire(dst_wire), dst_wire_no);
+        }
+
         auto& find_dst1 = netinfo2wireId2Dimacs[net_info];
         auto find_dst2 = find_dst1.find(dst_wire);
         if(find_dst2 == find_dst1.end()){
@@ -1113,8 +1058,6 @@ struct Router1
             int intra2 = std::get<5>(coord);
 
 
-            bool inter_routing = false;
-            if(intra1 == -1 && intra2 == -1 && (x1 != x2 || y1 != y2)){inter_routing = true;}
             std::vector<int> next_dimacs_col;
             next_dimacs_col.clear();
 
@@ -1126,6 +1069,9 @@ struct Router1
 
                 WireId start_wire = ctx->getPipSrcWire(pip);
                 WireId next_wire = ctx->getPipDstWire(pip);
+
+
+
              
                 wireId2Followers[start_wire].push_back(next_wire);
 				wireId2Followers[next_wire]; // create new entry for clause 10
@@ -1175,7 +1121,25 @@ struct Router1
 
 
                 // check if next wire is part of a wanted wire type. This type is needed when it has competitioners of the same type:
-                int type_next_wire = my_intra_coord_finder(next_wire, pip);
+                int type_next_wire = intra2; //my_intra_coord_finder(next_wire, pip);
+                //log_info("h1: type next wire %d | intra coord2 %d | intra coord1 %d\n", type_next_wire, intra2, intra1);
+
+                if(type_next_wire >= 0 && type_next_wire < 20 && dst_wire_no > -1){ 
+                    // then we have wire type 12 whose wire no. needs to be aligned with the destination wire wire no. when it is of type 13
+
+                    int next_wire_no = my_wire_no(next_wire, false);
+                    
+                    if(next_wire_no != dst_wire_no && next_wire_no != 1 && next_wire_no != 2){ // then we can set the variable for the next wire to true as it leads to the correct wire
+
+                        log_info("h2: no. alignment dst wire %s with no. %d | next next wire %s with no. %d\n", ctx->nameOfWire(dst_wire), dst_wire_no, ctx->nameOfWire(next_wire), next_wire_no);
+                        
+                        file << "-"<< std::to_string(next_dimacs) << " " << std::to_string(assump_l->dimacs_var) << " 0\n";
+                        ++cnf_clause_counter;
+                                
+                        solver->clause(next_dimacs, assump_l->dimacs_var);
+                    }
+                }
+
 
 
                 wireType2wires[false][type_next_wire].push_back(next_dimacs);
@@ -1564,6 +1528,18 @@ struct Router1
 
         auto dst_wire = ctx->getNetinfoSinkWire(net_info, net_info->users[arc.user_idx], arc.phys_idx);
 
+        /*
+        // find out wire no of dst_wire:
+        int type_dst = my_intra_coord_finder(dst_wire, PipId());
+        int dst_wire_no = -1;
+        if(type_dst >= 20){
+            
+            dst_wire_no = my_wire_no(dst_wire, true);
+            log_info("dst wire %s with wire no %d\n", ctx->nameOfWire(dst_wire), dst_wire_no);
+        }
+        */
+
+
         int dst_x = ctx->chip_info->wire_data[dst_wire.index].x;
         int dst_y = ctx->chip_info->wire_data[dst_wire.index].y;
 
@@ -1576,6 +1552,17 @@ struct Router1
         if(src_wire == dst_wire && round_number == 1){ // Remark: even in the original route_arc does it happen several times for the blinky example that the source wire is the same as the destination wire
 
             log_info("source wire is destination wire -> No routing needed\n");
+
+            //
+            NetInfo* bound_net = ctx->getBoundWireNet(src_wire);
+             
+            if(bound_net == nullptr){   
+                
+                log_info("%s bind wire src %s\n", ctx->nameOf(net_info), ctx->nameOfWire(src_wire));        
+                ctx->bindWire(src_wire, net_info, STRENGTH_STRONG);            
+            } // already bound by the net
+            else{log_info("source wire ist bereits an net gebunden: %s | aktuelles net: %s \n", ctx->nameOf(bound_net), ctx->nameOf(net_info));} // not happening
+            //
 
             Path* path = new Path(); // is a pointer
             float delay = 0;
@@ -1698,11 +1685,26 @@ struct Router1
                 // in case of an impasse the following loop doesn't get ever activated. Therefore, the path isn't extended and therefore not farther followed. In the code above it is already checked for
                 // destination wire and the path is deleted.
 
+                /*
+                if(intra_coord1 >= 0 && intra_coord1 < 20 && dst_wire_no > -1){ 
+                    // then we have wire type 12 whose wire no. needs to be aligned with the destination wire wire no. when it is of type 13
+
+                    int next_wire_no = my_wire_no(next_wire, false);
+                    
+                    if(next_wire_no != dst_wire_no){ // then ignore this option. The no. has to be identical
+
+                        continue;
+                    }
+                }
+                */
+
 
                 for (auto pip_end : ctx->getPipsDownhill(next_wire)){
 
                      
                     WireId next_next_wire = ctx->getPipDstWire(pip_end);
+
+                    
 
                     if(constant_router){
 
@@ -1721,6 +1723,20 @@ struct Router1
                     Loc loc = ctx->getPipLocation(pip_end);
 
 					int intra_coord2 = my_intra_coord_finder(next_next_wire, pip_end);
+
+                    /*
+                    if(intra_coord2 >= 0 && intra_coord2 < 20 && dst_wire_no > -1){ 
+                        // then we have wire type 12 whose wire no. needs to be aligned with the destination wire wire no. when it is of type 13
+    
+                        int next_next_wire_no = my_wire_no(next_next_wire, false);
+                        
+                        if(next_next_wire_no != dst_wire_no){ // then ignore this option. The no. has to be identical
+    
+                            log_info("no no. alignment dst wire %s with no. %d | next next wire %s with no. %d\n", ctx->nameOfWire(dst_wire), dst_wire_no, ctx->nameOfWire(next_next_wire), next_next_wire_no);
+                            continue;
+                        }
+                    }
+                    */
 				
                     // check if ChannelSegement for this coordinates already exists, when so create NO new path:
                     auto coord_tuple = std::make_tuple(start_x, start_y, loc.x, loc.y, intra_coord1, intra_coord2);
@@ -1933,6 +1949,8 @@ struct Router1
 
             int arc_count = 0;
             while(!arc_queue.empty()){ // consider the arcs individually
+
+                //ctx->yield(); // original calls it with every arc after few times
 
                 arc_key arc = arc_queue_pop();
 
@@ -2400,6 +2418,7 @@ struct Router1
                             }
                             else if(found_wire == ctx->getNetinfoSourceWire(found_net) || other_wire == ctx->getNetinfoSourceWire(found_net)){ // a source wire is involved but it is the output wire of the pip.
                                 // This should never happen as router1.cc only watches at single arcs independent of the inter-net-connections and the source wire marks always the start of a net
+                                log_info("third pip source case happens but should not\n");
                                 continue;
                             }
 
@@ -2426,9 +2445,10 @@ struct Router1
                                     src_pip_storage.erase(std::make_tuple(ctx->getNetinfoSourceWire(found_net), ctx->getPipDstWire(found_pip), found_net));
                                 }
 
-
-                                ctx->bindPip(found_pip, found_net, STRENGTH_WEAK); 
-                                log_info("----- %s bind pip/switch %s\n", ctx->nameOf(found_net), ctx->nameOfPip(found_pip));
+                                ctx->unlock();
+                                ctx->bindPip(found_pip, found_net, STRENGTH_STRONG);
+                                ctx->lock(); 
+                                log_info("----- %s bind pip/switch1 %s\n", ctx->nameOf(found_net), ctx->nameOfPip(found_pip));
 
                                 if(dst_wire_activated){
 
@@ -2453,10 +2473,17 @@ struct Router1
 
                 NetInfo* bound_net = ctx->getBoundWireNet(ctx->getPipDstWire(pip));
 
-                if(bound_net != nullptr){continue;}
+                if(bound_net != nullptr){
+                    
+                    log_info("Dst wire of pip is already bound to net %s | current net: %s\n", ctx->nameOf(bound_net), ctx->nameOf(net));
+                    
+                    continue;}
+                    
+                ctx->unlock();
 
-                ctx->bindPip(pip, net, STRENGTH_WEAK); 
-                log_info("----- %s bind pip/switch %s\n", ctx->nameOf(net), ctx->nameOfPip(pip));
+                ctx->bindPip(pip, net, STRENGTH_STRONG); 
+                ctx->lock();
+                log_info("----- %s bind pip/switch2 %s\n", ctx->nameOf(net), ctx->nameOfPip(pip));
             }
 
 
@@ -2492,7 +2519,10 @@ struct Router1
              
                 if(bound_net == found_net){continue;} // already bound by the net
           
-                ctx->bindWire(found_wire, found_net, STRENGTH_WEAK);
+                ctx->unlock();
+
+                ctx->bindWire(found_wire, found_net, STRENGTH_STRONG);
+                ctx->lock();
                 log_info("----- %s bind wire %s \n",ctx->nameOf(found_net), ctx->nameOfWire(found_wire));
                 }
             }
@@ -2550,676 +2580,8 @@ struct Router1
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    bool route_arc(const arc_key &arc, bool ripup)
-    {
 
-        NetInfo *net_info = arc.net_info;
-        auto user_idx = arc.user_idx;
 
-        auto src_wire = ctx->getNetinfoSourceWire(net_info);
-        auto dst_wire = ctx->getNetinfoSinkWire(net_info, net_info->users[user_idx], arc.phys_idx);
-        ripup_flag = false;
-
-        float crit = tmg.get_criticality(CellPortKey(net_info->users.at(user_idx)));
-
-        if (ctx->debug) {
-            log("Routing arc %d on net %s (%d arcs total):\n", user_idx.idx(), ctx->nameOf(net_info),
-                int(net_info->users.capacity()));
-            log("  source ... %s\n", ctx->nameOfWire(src_wire));
-            log("  sink ..... %s\n", ctx->nameOfWire(dst_wire));
-        }
-
-        // unbind wires that are currently used exclusively by this arc
-
-        pool<WireId> old_arc_wires;
-        old_arc_wires.swap(arc_to_wires[arc]);
-
-        for (WireId wire : old_arc_wires) {
-            auto &arc_wires = wire_to_arcs.at(wire);
-            NPNR_ASSERT(arc_wires.count(arc));
-            arc_wires.erase(arc);
-            if (arc_wires.empty()) {
-                if (ctx->debug)
-                    log("  unbind %s\n", ctx->nameOfWire(wire));
-                ctx->unbindWire(wire);
-            }
-        }
-
-        // special case
-
-        if (src_wire == dst_wire) {
-            NetInfo *bound = ctx->getBoundWireNet(src_wire);
-            if (bound != nullptr)
-                NPNR_ASSERT(bound == net_info);
-            else {
-                ctx->bindWire(src_wire, net_info, STRENGTH_WEAK);
-            }
-            arc_to_wires[arc].insert(src_wire);
-            wire_to_arcs[src_wire].insert(arc);
-            return true;
-        }
-
-        // reset wire queue
-
-        if (!queue.empty()) {
-            std::priority_queue<QueuedWire, std::vector<QueuedWire>, QueuedWire::Greater> new_queue;
-            queue.swap(new_queue);
-        }
-        dict<WireId, QueuedWire> visited;
-
-        // A* main loop
-
-        int visitCnt = 0;
-        int maxVisitCnt = INT_MAX;
-        delay_t best_est = 0;
-        delay_t best_score = -1;
-
-        {
-            QueuedWire qw;
-            qw.wire = src_wire;
-            qw.pip = PipId();
-            qw.delay = ctx->getWireDelay(qw.wire).maxDelay();
-            qw.penalty = 0;
-            qw.bonus = 0;
-            if (cfg.useEstimate) {
-                qw.togo = ctx->estimateDelay(qw.wire, dst_wire);
-                best_est = qw.delay + qw.togo;
-            }
-            qw.randtag = ctx->rng();
-
-            queue.push(qw);
-            visited[qw.wire] = qw;
-        }
-
-        while (visitCnt++ < maxVisitCnt && !queue.empty()) {
-            QueuedWire qw = queue.top();
-            queue.pop();
-
-            for (auto pip : ctx->getPipsDownhill(qw.wire)) {
-                delay_t next_delay = qw.delay + ctx->getPipDelay(pip).maxDelay();
-                delay_t next_penalty = qw.penalty;
-                delay_t next_bonus = qw.bonus;
-                delay_t penalty_delta = 0;
-
-                WireId next_wire = ctx->getPipDstWire(pip);
-                next_delay += ctx->getWireDelay(next_wire).maxDelay();
-
-                WireId conflictWireWire = WireId(), conflictPipWire = WireId();
-                NetInfo *conflictWireNet = nullptr, *conflictPipNet = nullptr;
-
-                if (net_info->wires.count(next_wire) && net_info->wires.at(next_wire).pip == pip) {
-                    next_bonus += cfg.reuseBonus * (1.0 - crit);
-                } else {
-                    if (!ctx->checkWireAvail(next_wire)) {
-                        if (!ripup)
-                            continue;
-                        conflictWireWire = ctx->getConflictingWireWire(next_wire);
-                        if (conflictWireWire == WireId()) {
-                            conflictWireNet = ctx->getConflictingWireNet(next_wire);
-                            if (conflictWireNet == nullptr)
-                                continue;
-                            else {
-                                if (conflictWireNet->wires.count(next_wire) &&
-                                    conflictWireNet->wires.at(next_wire).strength > STRENGTH_STRONG)
-                                    continue;
-                            }
-                        } else {
-                            NetInfo *conflicting = ctx->getBoundWireNet(conflictWireWire);
-                            if (conflicting != nullptr) {
-                                if (conflicting->wires.count(conflictWireWire) &&
-                                    conflicting->wires.at(conflictWireWire).strength > STRENGTH_STRONG)
-                                    continue;
-                            }
-                        }
-                    }
-
-                    if (!ctx->checkPipAvail(pip)) {
-                        if (!ripup)
-                            continue;
-                        conflictPipWire = ctx->getConflictingPipWire(pip);
-                        if (conflictPipWire == WireId()) {
-                            conflictPipNet = ctx->getConflictingPipNet(pip);
-                            if (conflictPipNet == nullptr)
-                                continue;
-                            else {
-                                if (conflictPipNet->wires.count(next_wire) &&
-                                    conflictPipNet->wires.at(next_wire).strength > STRENGTH_STRONG)
-                                    continue;
-                            }
-                        } else {
-                            NetInfo *conflicting = ctx->getBoundWireNet(conflictPipWire);
-                            if (conflicting != nullptr) {
-                                if (conflicting->wires.count(conflictPipWire) &&
-                                    conflicting->wires.at(conflictPipWire).strength > STRENGTH_STRONG)
-                                    continue;
-                            }
-                        }
-                    }
-
-                    if (conflictWireNet != nullptr && conflictPipWire != WireId() &&
-                        conflictWireNet->wires.count(conflictPipWire))
-                        conflictPipWire = WireId();
-
-                    if (conflictPipNet != nullptr && conflictWireWire != WireId() &&
-                        conflictPipNet->wires.count(conflictWireWire))
-                        conflictWireWire = WireId();
-
-                    if (conflictWireWire == conflictPipWire)
-                        conflictWireWire = WireId();
-
-                    if (conflictWireNet == conflictPipNet)
-                        conflictWireNet = nullptr;
-
-                    if (conflictWireWire != WireId()) {
-                        auto scores_it = wireScores.find(conflictWireWire);
-                        if (scores_it != wireScores.end())
-                            penalty_delta += scores_it->second * cfg.wireRipupPenalty;
-                        penalty_delta += cfg.wireRipupPenalty;
-                    }
-
-                    if (conflictPipWire != WireId()) {
-                        auto scores_it = wireScores.find(conflictPipWire);
-                        if (scores_it != wireScores.end())
-                            penalty_delta += scores_it->second * cfg.wireRipupPenalty;
-                        penalty_delta += cfg.wireRipupPenalty;
-                    }
-
-                    if (conflictWireNet != nullptr) {
-                        auto scores_it = netScores.find(conflictWireNet);
-                        if (scores_it != netScores.end())
-                            penalty_delta += scores_it->second * cfg.netRipupPenalty;
-                        penalty_delta += cfg.netRipupPenalty;
-                        penalty_delta += conflictWireNet->wires.size() * cfg.wireRipupPenalty;
-                    }
-
-                    if (conflictPipNet != nullptr) {
-                        auto scores_it = netScores.find(conflictPipNet);
-                        if (scores_it != netScores.end())
-                            penalty_delta += scores_it->second * cfg.netRipupPenalty;
-                        penalty_delta += cfg.netRipupPenalty;
-                        penalty_delta += conflictPipNet->wires.size() * cfg.wireRipupPenalty;
-                    }
-                }
-
-                next_penalty += penalty_delta * (timing_driven ? std::max(0.05, (1.0 - crit)) : 1);
-
-                delay_t next_score = next_delay + next_penalty;
-                NPNR_ASSERT(next_score >= 0);
-
-                if ((best_score >= 0) && (next_score - next_bonus - cfg.estimatePrecision > best_score))
-                    continue;
-
-                auto old_visited_it = visited.find(next_wire);
-                if (old_visited_it != visited.end()) {
-                    delay_t old_delay = old_visited_it->second.delay;
-                    delay_t old_score = old_delay + old_visited_it->second.penalty;
-                    NPNR_ASSERT(old_score >= 0);
-
-                    if (next_score + ctx->getDelayEpsilon() >= old_score)
-                        continue;
-
-#if 0
-                    if (ctx->debug)
-                        log("Found better route to %s. Old vs new delay estimate: %.3f (%.3f) %.3f (%.3f)\n",
-                            ctx->nameOfWire(next_wire),
-                            ctx->getDelayNS(old_score),
-                            ctx->getDelayNS(old_visited_it->second.delay),
-                            ctx->getDelayNS(next_score),
-                            ctx->getDelayNS(next_delay));
-#endif
-                }
-
-                QueuedWire next_qw;
-                next_qw.wire = next_wire;
-                next_qw.pip = pip;
-                next_qw.delay = next_delay;
-                next_qw.penalty = next_penalty;
-                next_qw.bonus = next_bonus;
-                if (cfg.useEstimate) {
-                    next_qw.togo = ctx->estimateDelay(next_wire, dst_wire);
-                    delay_t this_est = next_qw.delay + next_qw.togo;
-                    if (this_est / 2 - cfg.estimatePrecision > best_est)
-                        continue;
-                    if (best_est > this_est)
-                        best_est = this_est;
-                }
-                next_qw.randtag = ctx->rng();
-
-#if 0
-                if (ctx->debug)
-                    log("%s -> %s: %.3f (%.3f)\n",
-                        ctx->nameOfWire(qw.wire),
-                        ctx->nameOfWire(next_wire),
-                        ctx->getDelayNS(next_score),
-                        ctx->getDelayNS(next_delay));
-#endif
-
-                visited[next_qw.wire] = next_qw;
-                queue.push(next_qw);
-
-                if (next_wire == dst_wire) {
-                    maxVisitCnt = std::min(maxVisitCnt, 2 * visitCnt + (next_qw.penalty > 0 ? 100 : 0));
-                    best_score = next_score - next_bonus;
-                }
-            }
-        }
-
-        if (ctx->debug)
-            log("  total number of visited nodes: %d\n", visitCnt);
-
-        if (visited.count(dst_wire) == 0) {
-            if (ctx->debug)
-                log("  no route found for this arc\n");
-            return false;
-        }
-
-        if (ctx->debug) {
-            log("  final route delay:   %8.2f\n", ctx->getDelayNS(visited[dst_wire].delay));
-            log("  final route penalty: %8.2f\n", ctx->getDelayNS(visited[dst_wire].penalty));
-            log("  final route bonus:   %8.2f\n", ctx->getDelayNS(visited[dst_wire].bonus));
-        }
-
-        // bind resulting route (and maybe unroute other nets)
-
-        pool<WireId> unassign_wires = arc_to_wires[arc];
-
-        WireId cursor = dst_wire;
-        delay_t accumulated_path_delay = 0;
-        delay_t last_path_delay_delta = 0;
-        while (1) {
-            auto pip = visited[cursor].pip;
-
-            if (ctx->debug) {
-                delay_t path_delay_delta = ctx->estimateDelay(cursor, dst_wire) - accumulated_path_delay;
-
-                log("  node %s (%+.2f %+.2f)\n", ctx->nameOfWire(cursor), ctx->getDelayNS(path_delay_delta),
-                    ctx->getDelayNS(path_delay_delta - last_path_delay_delta));
-
-                last_path_delay_delta = path_delay_delta;
-
-                if (pip != PipId())
-                    accumulated_path_delay += ctx->getPipDelay(pip).maxDelay();
-                accumulated_path_delay += ctx->getWireDelay(cursor).maxDelay();
-            }
-
-            if (pip == PipId())
-                NPNR_ASSERT(cursor == src_wire);
-
-            if (!net_info->wires.count(cursor) || net_info->wires.at(cursor).pip != pip) {
-                if (!ctx->checkWireAvail(cursor)) {
-                    ripup_wire(cursor);
-                    NPNR_ASSERT(ctx->checkWireAvail(cursor));
-                }
-
-                if (pip != PipId() && !ctx->checkPipAvail(pip)) {
-                    ripup_pip(pip);
-                    NPNR_ASSERT(ctx->checkPipAvail(pip));
-                }
-
-                if (pip == PipId()) {
-                    if (ctx->debug)
-                        log("    bind wire %s\n", ctx->nameOfWire(cursor));
-                    ctx->bindWire(cursor, net_info, STRENGTH_WEAK);
-                } else {
-                    if (ctx->debug)
-                        log("    bind pip %s\n", ctx->nameOfPip(pip));
-                    ctx->bindPip(pip, net_info, STRENGTH_WEAK);
-                }
-            }
-
-            wire_to_arcs[cursor].insert(arc);
-            arc_to_wires[arc].insert(cursor);
-
-            if (pip == PipId())
-                break;
-
-            cursor = ctx->getPipSrcWire(pip);
-        }
-
-        if (ripup_flag)
-            arcs_with_ripup++;
-        else
-            arcs_without_ripup++;
-
-        return true;
-    }
-
-    bool route_const_arc(const arc_key &arc, bool ripup)
-    {
-
-        NetInfo *net_info = arc.net_info;
-        auto user_idx = arc.user_idx;
-
-        auto dst_wire = ctx->getNetinfoSinkWire(net_info, net_info->users[user_idx], arc.phys_idx);
-        ripup_flag = false;
-
-        if (ctx->debug) {
-            log("Routing constant arc %d on net %s (%d arcs total):\n", user_idx.idx(), ctx->nameOf(net_info),
-                int(net_info->users.capacity()));
-            log("  value ... %s\n", ctx->nameOf(net_info->constant_value));
-            log("  sink ..... %s\n", ctx->nameOfWire(dst_wire));
-        }
-
-        // unbind wires that are currently used exclusively by this arc
-
-        pool<WireId> old_arc_wires;
-        old_arc_wires.swap(arc_to_wires[arc]);
-
-        for (WireId wire : old_arc_wires) {
-            auto &arc_wires = wire_to_arcs.at(wire);
-            NPNR_ASSERT(arc_wires.count(arc));
-            arc_wires.erase(arc);
-            if (arc_wires.empty()) {
-                if (ctx->debug)
-                    log("  unbind %s\n", ctx->nameOfWire(wire));
-                ctx->unbindWire(wire);
-            }
-        }
-
-        // special case
-
-        if (ctx->getWireConstantValue(dst_wire) == net_info->constant_value) {
-            NetInfo *bound = ctx->getBoundWireNet(dst_wire);
-            if (bound != nullptr)
-                NPNR_ASSERT(bound == net_info);
-            else {
-                ctx->bindWire(dst_wire, net_info, STRENGTH_WEAK);
-            }
-            arc_to_wires[arc].insert(dst_wire);
-            wire_to_arcs[dst_wire].insert(arc);
-            return true;
-        }
-
-        // reset wire queue
-
-        if (!queue.empty()) {
-            std::priority_queue<QueuedWire, std::vector<QueuedWire>, QueuedWire::Greater> new_queue;
-            queue.swap(new_queue);
-        }
-        dict<WireId, QueuedWire> visited;
-
-        // A* main loop
-
-        int visitCnt = 0;
-        int maxVisitCnt = INT_MAX;
-        delay_t best_score = -1;
-        WireId best_src;
-
-        {
-            QueuedWire qw;
-            qw.wire = dst_wire;
-            qw.pip = PipId();
-            qw.delay = ctx->getWireDelay(qw.wire).maxDelay();
-            qw.penalty = 0;
-            qw.bonus = 0;
-            qw.randtag = ctx->rng();
-
-            queue.push(qw);
-            visited[qw.wire] = qw;
-        }
-
-        while (visitCnt++ < maxVisitCnt && !queue.empty()) {
-            QueuedWire qw = queue.top();
-            queue.pop();
-
-            for (auto pip : ctx->getPipsUphill(qw.wire)) {
-                delay_t next_delay = qw.delay + ctx->getPipDelay(pip).maxDelay();
-                delay_t next_penalty = qw.penalty;
-                delay_t next_bonus = qw.bonus;
-                delay_t penalty_delta = 0;
-
-                WireId next_wire = ctx->getPipSrcWire(pip);
-                next_delay += ctx->getWireDelay(next_wire).maxDelay();
-
-                WireId conflictWireWire = WireId(), conflictPipWire = WireId();
-                NetInfo *conflictWireNet = nullptr, *conflictPipNet = nullptr;
-
-                if (net_info->wires.count(qw.wire)) {
-                    if (net_info->wires.at(qw.wire).pip != pip)
-                        continue;
-                    next_bonus += cfg.reuseBonus;
-                } else {
-                    if (!ctx->checkWireAvail(next_wire)) {
-                        if (!ripup)
-                            continue;
-                        conflictWireWire = ctx->getConflictingWireWire(next_wire);
-                        if (conflictWireWire == WireId()) {
-                            conflictWireNet = ctx->getConflictingWireNet(next_wire);
-                            if (conflictWireNet == nullptr)
-                                continue;
-                            else {
-                                if (conflictWireNet->wires.count(next_wire) &&
-                                    conflictWireNet->wires.at(next_wire).strength > STRENGTH_STRONG)
-                                    continue;
-                            }
-                        } else {
-                            NetInfo *conflicting = ctx->getBoundWireNet(conflictWireWire);
-                            if (conflicting != nullptr) {
-                                if (conflicting->wires.count(conflictWireWire) &&
-                                    conflicting->wires.at(conflictWireWire).strength > STRENGTH_STRONG)
-                                    continue;
-                            }
-                        }
-                    }
-
-                    if (!ctx->checkPipAvail(pip)) {
-                        if (!ripup)
-                            continue;
-                        conflictPipWire = ctx->getConflictingPipWire(pip);
-                        if (conflictPipWire == WireId()) {
-                            conflictPipNet = ctx->getConflictingPipNet(pip);
-                            if (conflictPipNet == nullptr)
-                                continue;
-                            else {
-                                if (conflictPipNet->wires.count(next_wire) &&
-                                    conflictPipNet->wires.at(next_wire).strength > STRENGTH_STRONG)
-                                    continue;
-                            }
-                        } else {
-                            NetInfo *conflicting = ctx->getBoundWireNet(conflictPipWire);
-                            if (conflicting != nullptr) {
-                                if (conflicting->wires.count(conflictPipWire) &&
-                                    conflicting->wires.at(conflictPipWire).strength > STRENGTH_STRONG)
-                                    continue;
-                            }
-                        }
-                    }
-
-                    if (conflictWireNet != nullptr && conflictPipWire != WireId() &&
-                        conflictWireNet->wires.count(conflictPipWire))
-                        conflictPipWire = WireId();
-
-                    if (conflictPipNet != nullptr && conflictWireWire != WireId() &&
-                        conflictPipNet->wires.count(conflictWireWire))
-                        conflictWireWire = WireId();
-
-                    if (conflictWireWire == conflictPipWire)
-                        conflictWireWire = WireId();
-
-                    if (conflictWireNet == conflictPipNet)
-                        conflictWireNet = nullptr;
-
-                    if (conflictWireWire != WireId()) {
-                        auto scores_it = wireScores.find(conflictWireWire);
-                        if (scores_it != wireScores.end())
-                            penalty_delta += scores_it->second * cfg.wireRipupPenalty;
-                        penalty_delta += cfg.wireRipupPenalty;
-                    }
-
-                    if (conflictPipWire != WireId()) {
-                        auto scores_it = wireScores.find(conflictPipWire);
-                        if (scores_it != wireScores.end())
-                            penalty_delta += scores_it->second * cfg.wireRipupPenalty;
-                        penalty_delta += cfg.wireRipupPenalty;
-                    }
-
-                    if (conflictWireNet != nullptr) {
-                        auto scores_it = netScores.find(conflictWireNet);
-                        if (scores_it != netScores.end())
-                            penalty_delta += scores_it->second * cfg.netRipupPenalty;
-                        penalty_delta += cfg.netRipupPenalty;
-                        penalty_delta += conflictWireNet->wires.size() * cfg.wireRipupPenalty;
-                    }
-
-                    if (conflictPipNet != nullptr) {
-                        auto scores_it = netScores.find(conflictPipNet);
-                        if (scores_it != netScores.end())
-                            penalty_delta += scores_it->second * cfg.netRipupPenalty;
-                        penalty_delta += cfg.netRipupPenalty;
-                        penalty_delta += conflictPipNet->wires.size() * cfg.wireRipupPenalty;
-                    }
-                }
-
-                next_penalty += penalty_delta;
-
-                delay_t next_score = next_delay + next_penalty;
-                NPNR_ASSERT(next_score >= 0);
-
-                if ((best_score >= 0) && (next_score - next_bonus - cfg.estimatePrecision > best_score))
-                    continue;
-
-                auto old_visited_it = visited.find(next_wire);
-                if (old_visited_it != visited.end()) {
-                    continue;
-                }
-
-                QueuedWire next_qw;
-                next_qw.wire = next_wire;
-                next_qw.pip = pip;
-                next_qw.delay = next_delay;
-                next_qw.penalty = next_penalty;
-                next_qw.bonus = next_bonus;
-                next_qw.randtag = ctx->rng();
-
-                visited[next_qw.wire] = next_qw;
-                queue.push(next_qw);
-
-                if (ctx->getWireConstantValue(next_wire) == net_info->constant_value) {
-                    maxVisitCnt = std::min(maxVisitCnt, 2 * visitCnt + (next_qw.penalty > 0 ? 100 : 0));
-                    if (best_src == WireId() || next_score < best_score) {
-                        best_src = next_wire;
-                    }
-                    best_score = next_score - next_bonus;
-                }
-            }
-        }
-
-        if (ctx->debug)
-            log("  total number of visited nodes: %d\n", visitCnt);
-
-        if (best_src == WireId()) {
-            if (ctx->debug)
-                log("  no route found for this arc\n");
-            return false;
-        }
-
-        if (ctx->debug) {
-            log("  final route delay:   %8.2f\n", ctx->getDelayNS(visited[dst_wire].delay));
-            log("  final route penalty: %8.2f\n", ctx->getDelayNS(visited[dst_wire].penalty));
-            log("  final route bonus:   %8.2f\n", ctx->getDelayNS(visited[dst_wire].bonus));
-        }
-
-        // bind resulting route (and maybe unroute other nets)
-
-        pool<WireId> unassign_wires = arc_to_wires[arc];
-
-        WireId cursor = best_src;
-
-        if (!net_info->wires.count(cursor)) {
-            if (!ctx->checkWireAvail(cursor)) {
-                ripup_wire(cursor);
-                NPNR_ASSERT(ctx->checkWireAvail(cursor));
-            }
-            ctx->bindWire(cursor, net_info, STRENGTH_WEAK);
-        }
-
-        wire_to_arcs[cursor].insert(arc);
-        arc_to_wires[arc].insert(cursor);
-
-        while (1) {
-            auto pip = visited[cursor].pip;
-
-            if (pip == PipId()) {
-                NPNR_ASSERT(cursor == dst_wire);
-                break;
-            }
-
-            WireId next = ctx->getPipDstWire(pip);
-
-            if (!net_info->wires.count(next) || (net_info->wires.count(next) && net_info->wires.at(next).pip != pip)) {
-                if (!ctx->checkWireAvail(next)) {
-                    ripup_wire(next);
-                    NPNR_ASSERT(ctx->checkWireAvail(next));
-                }
-
-                if (!ctx->checkPipAvail(pip)) {
-                    ripup_pip(pip);
-                    NPNR_ASSERT(ctx->checkPipAvail(pip));
-                }
-
-                if (ctx->debug)
-                    log("    bind pip %s\n", ctx->nameOfPip(pip));
-                ctx->bindPip(pip, net_info, STRENGTH_WEAK);
-            }
-
-            wire_to_arcs[next].insert(arc);
-            arc_to_wires[arc].insert(next);
-
-            cursor = next;
-        }
-
-        if (ripup_flag)
-            arcs_with_ripup++;
-        else
-            arcs_without_ripup++;
-
-        return true;
-    }
-
-    delay_t find_slack_thresh()
-    {
-        // If more than 5% of arcs have negative slack; use the 5% threshold as a ripup criteria
-        int arc_count = 0;
-        int failed_count = 0;
-        delay_t default_thresh = ctx->getDelayEpsilon();
-
-        for (auto &net : ctx->nets) {
-            NetInfo *ni = net.second.get();
-            if (skip_net(ni))
-                continue;
-            for (auto &usr : ni->users) {
-                ++arc_count;
-                delay_t slack = tmg.get_setup_slack(CellPortKey(usr));
-                if (slack == std::numeric_limits<delay_t>::lowest())
-                    continue;
-                if (slack < default_thresh)
-                    ++failed_count;
-            }
-        }
-
-        if (arc_count < 50 || (failed_count < (0.05 * arc_count))) {
-            return default_thresh;
-        }
-
-        std::vector<delay_t> slacks;
-        for (auto &net : ctx->nets) {
-            NetInfo *ni = net.second.get();
-            if (skip_net(ni))
-                continue;
-            for (auto &usr : ni->users) {
-                delay_t slack = tmg.get_setup_slack(CellPortKey(usr));
-                if (slack == std::numeric_limits<delay_t>::lowest())
-                    continue;
-                slacks.push_back(slack);
-            }
-        }
-        std::sort(slacks.begin(), slacks.end());
-        delay_t thresh = slacks.at(int(slacks.size() * 0.05));
-        log_warning("%.f%% of arcs have failing slack; using %.2fns as ripup threshold. Consider a reduced Fmax "
-                    "constraint.\n",
-                    (100.0 * failed_count) / arc_count, ctx->getDelayNS(thresh));
-        return thresh;
-    }
 };
 
 } // namespace
@@ -3229,8 +2591,8 @@ NEXTPNR_NAMESPACE_BEGIN
 Router1Cfg::Router1Cfg(Context *ctx)
 {
     maxIterCnt = ctx->setting<int>("router1/maxIterCnt", 200);
-    cleanupReroute = ctx->setting<bool>("router1/cleanupReroute", true);
-    fullCleanupReroute = ctx->setting<bool>("router1/fullCleanupReroute", true);
+    cleanupReroute = ctx->setting<bool>("router1/cleanupReroute", false); // new
+    fullCleanupReroute = ctx->setting<bool>("router1/fullCleanupReroute", false); // new
     useEstimate = ctx->setting<bool>("router1/useEstimate", true);
 
     wireRipupPenalty = ctx->getRipupDelayPenalty();
@@ -3246,6 +2608,7 @@ bool router1(Context *ctx, const Router1Cfg &cfg)
         log_break();
         log_info("Routing..\n");
         ScopeLock<Context> lock(ctx);
+        //ctx->unlock();
         auto rstart = std::chrono::high_resolution_clock::now();
 
         log_info("Setting up routing queue.\n");
@@ -3263,25 +2626,46 @@ bool router1(Context *ctx, const Router1Cfg &cfg)
  //std::ofstream file_with_header("CNF.csv", std::ios_base::trunc);
 //file_with_header("CNF_withHeader.csv"
         std::ofstream file("CNF.csv", std::ios_base::trunc);
+        //ctx->unlock();
+      //  ctx->yield();
+        log_info("Checksum before routing: 0x%08x\n", ctx->checksum());
+
 
         if(router.my_master(router)){
 
           //  ctx->yield();
         	//router.check();
         //	ctx->check();
-
+            log_info("Checksum after routing: 0x%08x\n", ctx->checksum());
 
         	log_info("Routing complete.\n");
-       		ctx->yield();
+            //ctx->unlock(); 
+       		ctx->yield(); // common/kernel/basectx.h // Lock to be taken by UI when wanting to access context - the yield()
+               // method will lock/unlock it when its' released the main mutex to make
+               // sure the UI is not starved.
        // log_info("Router1 time %.02fs\n", std::chrono::duration<float>(rend - rstart).count());
+       
+            log_info("mark0\n");
+
+            ctx->debug = true;
+            log_info("mark1\n");
+            //ctx->lock();
+            log_info("mark2\n");
+
+            //ctx->yield(); // original runs it after routing
+            log_info("mark3\n");
+
+            ctx->check();
+            log_info("mark4\n");
+
 
 #ifndef NDEBUG
        		//router.check();
-        	ctx->check();
-        	log_assert(ctx->checkRoutedDesign());
+        	//ctx->check();
+        //	log_assert(ctx->checkRoutedDesign());
 #endif
-
-        	log_info("Checksum: 0x%08x\n", ctx->checksum());
+            log_assert(ctx->checkRoutedDesign());
+            log_info("Checksum after routing and yield: 0x%08x\n", ctx->checksum());
         	timing_analysis(ctx, true /* slack_histogram */, true /* print_fmax */, true /* print_path */,
                         true /* warn_on_failure */, true /* update_results */);
 
@@ -3409,6 +2793,19 @@ bool Context::checkRoutedDesign() const
                 }
             }
         };
+
+        /**/
+        for (const auto &wire : net_info->wires) {
+           
+            if(wire.second.pip != PipId())
+                log_info("Wire pip value of net %s, wire %s, pip %s\n", ctx->nameOf(net_info), nameOfWire(wire.first), nameOfPip(wire.second.pip));
+
+            NetInfo* found_net = ctx->getBoundWireNet(wire.first);
+            if(found_net != net_info){log_info("ALARM1, nets wire bound else by net  %s of wire %s as net member %s |\n", ctx->nameOf(found_net), ctx->nameOfWire(wire.first), ctx->nameOf(net_info));}
+            else if(found_net == nullptr){log_info("ALARM2, nets wire bound else by net null by wire %s  as net member %s |\n", ctx->nameOfWire(wire.first), ctx->nameOf(net_info));}
+
+        }
+        
 
         if (ctx->debug) {
             log("  driver: %s\n", ctx->nameOfWire(src_wire));

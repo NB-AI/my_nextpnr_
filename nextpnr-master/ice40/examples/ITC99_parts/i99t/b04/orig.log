@@ -1,0 +1,2425 @@
+Warning: No PCF file specified; IO pins will be placed automatically
+
+Info: Packing constants..
+Info: Packing IOs..
+Info: Packing LUT-FFs..
+Info:       65 LCs used as LUT4 only
+Info:       48 LCs used as LUT4 and DFF
+Info: Packing non-LUT FFs..
+Info:       18 LCs used as DFF only
+Info: Packing carries..
+Info:       15 LCs used as CARRY only
+Info: Packing indirect carry+LUT pairs...
+Info:        2 LUTs merged into carry LCs
+Info: Packing RAMs..
+Info: Placing PLLs..
+Info: Packing special functions..
+Info: Packing PLLs..
+Info: Promoting globals..
+Info: promoting CLOCK$SB_IO_IN (fanout 66)
+Info: promoting RESET$SB_IO_IN [reset] (fanout 66)
+Info: promoting AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0_SB_LUT4_I2_1_O [cen] (fanout 48)
+Info: Constraining chains...
+Info:        0 LCs used to legalise carry chains.
+Info: Checksum: 0x0f53f136
+
+Info: Device utilisation:
+Info: 	         ICESTORM_LC:     146/   1280    11%
+Info: 	        ICESTORM_RAM:       0/     16     0%
+Info: 	               SB_IO:      21/    112    18%
+Info: 	               SB_GB:       3/      8    37%
+Info: 	        ICESTORM_PLL:       0/      1     0%
+Info: 	         SB_WARMBOOT:       0/      1     0%
+
+Info: Placed 0 cells based on constraints.
+Info: Creating initial analytic placement for 122 cells, random placement wirelen = 1665.
+Info:     at initial placer iter 0, wirelen = 230
+Info:     at initial placer iter 1, wirelen = 219
+Info:     at initial placer iter 2, wirelen = 215
+Info:     at initial placer iter 3, wirelen = 216
+Info: Running main analytical placer, max placement attempts per cell = 10000.
+Info:     at iteration #1, type SB_GB: wirelen solved = 216, spread = 216, legal = 232; time = 0.00s
+Info:     at iteration #1, type ICESTORM_LC: wirelen solved = 238, spread = 512, legal = 554; time = 0.00s
+Info:     at iteration #1, type ALL: wirelen solved = 217, spread = 510, legal = 574; time = 0.00s
+Info:     at iteration #2, type SB_GB: wirelen solved = 562, spread = 562, legal = 576; time = 0.00s
+Info:     at iteration #2, type ICESTORM_LC: wirelen solved = 264, spread = 474, legal = 581; time = 0.00s
+Info:     at iteration #2, type ALL: wirelen solved = 228, spread = 485, legal = 556; time = 0.00s
+Info:     at iteration #3, type SB_GB: wirelen solved = 543, spread = 543, legal = 554; time = 0.00s
+Info:     at iteration #3, type ICESTORM_LC: wirelen solved = 252, spread = 438, legal = 517; time = 0.00s
+Info:     at iteration #3, type ALL: wirelen solved = 258, spread = 450, legal = 522; time = 0.00s
+Info:     at iteration #4, type SB_GB: wirelen solved = 509, spread = 509, legal = 520; time = 0.00s
+Info:     at iteration #4, type ICESTORM_LC: wirelen solved = 295, spread = 507, legal = 534; time = 0.00s
+Info:     at iteration #4, type ALL: wirelen solved = 283, spread = 439, legal = 531; time = 0.00s
+Info:     at iteration #5, type SB_GB: wirelen solved = 518, spread = 518, legal = 532; time = 0.00s
+Info:     at iteration #5, type ICESTORM_LC: wirelen solved = 308, spread = 451, legal = 520; time = 0.00s
+Info:     at iteration #5, type ALL: wirelen solved = 281, spread = 440, legal = 477; time = 0.00s
+Info:     at iteration #6, type SB_GB: wirelen solved = 463, spread = 463, legal = 477; time = 0.00s
+Info:     at iteration #6, type ICESTORM_LC: wirelen solved = 299, spread = 494, legal = 509; time = 0.00s
+Info:     at iteration #6, type ALL: wirelen solved = 281, spread = 474, legal = 526; time = 0.00s
+Info:     at iteration #7, type SB_GB: wirelen solved = 512, spread = 512, legal = 524; time = 0.00s
+Info:     at iteration #7, type ICESTORM_LC: wirelen solved = 317, spread = 482, legal = 509; time = 0.00s
+Info:     at iteration #7, type ALL: wirelen solved = 300, spread = 457, legal = 490; time = 0.00s
+Info:     at iteration #8, type SB_GB: wirelen solved = 466, spread = 466, legal = 481; time = 0.00s
+Info:     at iteration #8, type ICESTORM_LC: wirelen solved = 333, spread = 461, legal = 533; time = 0.00s
+Info:     at iteration #8, type ALL: wirelen solved = 296, spread = 456, legal = 543; time = 0.00s
+Info:     at iteration #9, type SB_GB: wirelen solved = 522, spread = 522, legal = 543; time = 0.00s
+Info:     at iteration #9, type ICESTORM_LC: wirelen solved = 350, spread = 472, legal = 557; time = 0.00s
+Info:     at iteration #9, type ALL: wirelen solved = 315, spread = 458, legal = 547; time = 0.00s
+Info:     at iteration #10, type SB_GB: wirelen solved = 535, spread = 535, legal = 547; time = 0.00s
+Info:     at iteration #10, type ICESTORM_LC: wirelen solved = 358, spread = 492, legal = 546; time = 0.00s
+Info:     at iteration #10, type ALL: wirelen solved = 332, spread = 541, legal = 568; time = 0.00s
+Info: HeAP Placer Time: 0.08s
+Info:   of which solving equations: 0.06s
+Info:   of which spreading cells: 0.01s
+Info:   of which strict legalisation: 0.00s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 15, wirelen = 477
+Info:   at iteration #5: temp = 0.000000, timing cost = 28, wirelen = 348
+Info:   at iteration #10: temp = 0.000000, timing cost = 27, wirelen = 340
+Info:   at iteration #15: temp = 0.000000, timing cost = 27, wirelen = 334
+Info:   at iteration #15: temp = 0.000000, timing cost = 27, wirelen = 334 
+Info: SA placement time 0.06s
+
+Info: Max frequency for clock 'CLOCK$SB_IO_IN_$glb_clk': 164.64 MHz (PASS at 12.00 MHz)
+
+Info: Max delay <async>                         -> posedge CLOCK$SB_IO_IN_$glb_clk: 6.86 ns
+Info: Max delay posedge CLOCK$SB_IO_IN_$glb_clk -> <async>                        : 2.29 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 77259,  77490) |************** 
+Info: [ 77490,  77721) |*** 
+Info: [ 77721,  77952) | 
+Info: [ 77952,  78183) |* 
+Info: [ 78183,  78414) |* 
+Info: [ 78414,  78645) |**** 
+Info: [ 78645,  78876) |************************ 
+Info: [ 78876,  79107) |*************** 
+Info: [ 79107,  79338) |******** 
+Info: [ 79338,  79569) | 
+Info: [ 79569,  79800) | 
+Info: [ 79800,  80031) |****************************** 
+Info: [ 80031,  80262) |********** 
+Info: [ 80262,  80493) |*** 
+Info: [ 80493,  80724) | 
+Info: [ 80724,  80955) |**************** 
+Info: [ 80955,  81186) |* 
+Info: [ 81186,  81417) | 
+Info: [ 81417,  81648) | 
+Info: [ 81648,  81879) |****************************** 
+Info: Checksum: 0x37a77f69
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 434 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:        471 |       36        413 |   36   413 |         0|       0.11       0.11|
+Info: Routing complete.
+Info: Router1 time 0.11s
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0_SB_LUT4_I2_1_O_$glb_ce
+  driver: X0/Y1/glb_netwk_3
+    -> X5/Y8/lutff_global:cen
+      => sink 35
+    -> X4/Y9/lutff_global:cen
+      => sink 30
+    -> X5/Y7/lutff_global:cen
+      => sink 47
+    -> X4/Y8/lutff_global:cen
+      => sink 45
+    -> X5/Y6/lutff_global:cen
+      => sink 43
+    -> X4/Y7/lutff_global:cen
+      => sink 27
+    -> X5/Y5/lutff_global:cen
+      => sink 46
+    -> X4/Y6/lutff_global:cen
+      => sink 42
+    -> X5/Y4/lutff_global:cen
+      => sink 25
+    -> X2/Y9/lutff_global:cen
+      => sink 16
+    -> X4/Y5/lutff_global:cen
+      => sink 44
+    -> X2/Y8/lutff_global:cen
+      => sink 40
+    -> X4/Y4/lutff_global:cen
+      => sink 26
+    -> X1/Y9/lutff_global:cen
+      => sink 39
+    -> X2/Y3/lutff_global:cen
+      => sink 4
+  no dangling wires.
+checking net RESET$SB_IO_IN_$glb_sr
+  driver: X0/Y1/glb_netwk_4
+    -> X1/Y6/lutff_global:s_r
+      => sink 23
+    -> X2/Y7/lutff_global:s_r
+      => sink 24
+    -> X1/Y9/lutff_global:s_r
+      => sink 57
+    -> X1/Y4/lutff_global:s_r
+      => sink 22
+    -> X2/Y9/lutff_global:s_r
+      => sink 34
+    -> X5/Y4/lutff_global:s_r
+      => sink 43
+    -> X5/Y6/lutff_global:s_r
+      => sink 61
+    -> X2/Y5/lutff_global:s_r
+      => sink 7
+    -> X4/Y8/lutff_global:s_r
+      => sink 63
+    -> X4/Y5/lutff_global:s_r
+      => sink 62
+    -> X2/Y3/lutff_global:s_r
+      => sink 4
+    -> X5/Y7/lutff_global:s_r
+      => sink 65
+    -> X2/Y4/lutff_global:s_r
+      => sink 21
+    -> X5/Y5/lutff_global:s_r
+      => sink 64
+    -> X2/Y8/lutff_global:s_r
+      => sink 58
+    -> X4/Y9/lutff_global:s_r
+      => sink 48
+    -> X4/Y4/lutff_global:s_r
+      => sink 44
+    -> X4/Y6/lutff_global:s_r
+      => sink 60
+    -> X2/Y6/lutff_global:s_r
+      => sink 6
+    -> X4/Y7/lutff_global:s_r
+      => sink 45
+    -> X1/Y8/lutff_global:s_r
+      => sink 10
+    -> X5/Y8/lutff_global:s_r
+      => sink 53
+  no dangling wires.
+checking net CLOCK$SB_IO_IN_$glb_clk
+  driver: X0/Y1/glb_netwk_2
+    -> X5/Y5/lutff_global:clk
+      => sink 64
+    -> X4/Y6/lutff_global:clk
+      => sink 60
+    -> X2/Y5/lutff_global:clk
+      => sink 7
+    -> X2/Y6/lutff_global:clk
+      => sink 6
+    -> X2/Y9/lutff_global:clk
+      => sink 34
+    -> X4/Y8/lutff_global:clk
+      => sink 63
+    -> X2/Y3/lutff_global:clk
+      => sink 4
+    -> X5/Y8/lutff_global:clk
+      => sink 53
+    -> X2/Y8/lutff_global:clk
+      => sink 58
+    -> X1/Y9/lutff_global:clk
+      => sink 57
+    -> X1/Y4/lutff_global:clk
+      => sink 22
+    -> X1/Y6/lutff_global:clk
+      => sink 23
+    -> X5/Y4/lutff_global:clk
+      => sink 43
+    -> X4/Y4/lutff_global:clk
+      => sink 44
+    -> X2/Y7/lutff_global:clk
+      => sink 24
+    -> X1/Y8/lutff_global:clk
+      => sink 10
+    -> X2/Y4/lutff_global:clk
+      => sink 21
+    -> X4/Y5/lutff_global:clk
+      => sink 62
+    -> X4/Y9/lutff_global:clk
+      => sink 48
+    -> X5/Y7/lutff_global:clk
+      => sink 65
+    -> X4/Y7/lutff_global:clk
+      => sink 45
+    -> X5/Y6/lutff_global:clk
+      => sink 61
+  no dangling wires.
+checking net RESTART_SB_LUT4_I2_O_SB_LUT4_O_I2[2]
+  driver: X4/Y7/lutff_6:out
+    -> X4/Y6/local_g1_6
+      -> X4/Y6/lutff_4:in_1
+        -> X4/Y6/lutff_4:in_2_lut
+          => sink 1
+  no dangling wires.
+checking net RESTART_SB_LUT4_I2_O_SB_LUT4_O_I2[3]
+  driver: X4/Y6/lutff_3:cout
+    -> X4/Y6/lutff_4:in_3
+      -> X4/Y6/lutff_4:in_3_lut
+        => sink 1
+  no dangling wires.
+checking net DATA_IN[1]
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_6_I2
+  driver: X4/Y7/lutff_0:out
+    -> X5/Y6/local_g3_0
+      -> X5/Y6/lutff_6:in_1
+        -> X5/Y6/lutff_6:in_3_lut
+          => sink 1
+      -> X5/Y6/lutff_4:in_1
+        -> X5/Y6/lutff_4:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net DATA_IN[5]
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_DFFES_Q_D_SB_DFFES_D_Q_SB_DFFES_Q_D
+  driver: X1/Y4/lutff_3:out
+    -> X1/Y4/local_g0_3
+      -> X1/Y4/lutff_2:in_3
+        -> X1/Y4/lutff_2:in_0_lut
+          => sink 0
+    -> X1/Y7/sp4_v_b_3
+      -> X1/Y6/local_g0_6
+        -> X1/Y6/lutff_3:in_3
+          -> X1/Y6/lutff_3:in_0_lut
+            => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_DFFES_Q_D
+  driver: X2/Y7/lutff_0:out
+    -> X2/Y7/local_g0_0
+      -> X2/Y7/lutff_1:in_1
+        -> X2/Y7/lutff_1:in_0_lut
+          => sink 0
+    -> X2/Y7/sp4_v_b_0
+      -> X2/Y4/local_g3_5
+        -> X2/Y4/lutff_6:in_2
+          -> X2/Y4/lutff_6:in_0_lut
+            => sink 1
+  no dangling wires.
+checking net RESTART$SB_IO_IN
+  driver: X0/Y5/io_0:D_IN_0
+    -> X0/Y5/span4_horz_24
+      -> X2/Y9/sp4_v_b_5
+        -> X1/Y9/local_g1_5
+          -> X1/Y9/lutff_4:in_2
+            -> X1/Y9/lutff_4:in_1_lut
+              => sink 6
+        -> X2/Y8/local_g1_0
+          -> X2/Y8/lutff_6:in_3
+            -> X2/Y8/lutff_6:in_1_lut
+              => sink 7
+    -> X0/Y7/span4_vert_b_0
+      -> X0/Y7/span4_horz_25
+        -> X2/Y7/sp4_h_r_4
+          -> X5/Y7/local_g2_1
+            -> X5/Y7/lutff_1:in_0
+              -> X5/Y7/lutff_1:in_2_lut
+                => sink 8
+          -> X6/Y7/sp4_v_b_4
+            -> X5/Y6/local_g3_1
+              -> X5/Y6/lutff_1:in_1
+                -> X5/Y6/lutff_1:in_0_lut
+                  => sink 2
+    -> X0/Y5/span12_horz_0
+      -> X5/Y5/local_g0_3
+        -> X5/Y5/lutff_6:in_3
+          -> X5/Y5/lutff_6:in_0_lut
+            => sink 0
+        -> X5/Y5/lutff_2:in_3
+          -> X5/Y5/lutff_2:in_0_lut
+            => sink 5
+    -> X0/Y5/span4_horz_0
+      -> X4/Y9/sp4_v_b_0
+        -> X4/Y8/local_g0_5
+          -> X4/Y8/lutff_2:in_3
+            -> X4/Y8/lutff_2:in_0_lut
+              => sink 4
+        -> X4/Y6/local_g3_5
+          -> X4/Y6/lutff_7:in_3
+            -> X4/Y6/lutff_7:in_0_lut
+              => sink 1
+      -> X4/Y5/sp4_v_b_6
+        -> X4/Y5/local_g0_6
+          -> X4/Y5/lutff_7:in_1
+            -> X4/Y5/lutff_7:in_0_lut
+              => sink 3
+  no dangling wires.
+checking net DATA_OUT[0]$SB_IO_OUT
+  driver: X5/Y5/lutff_2:out
+    -> X5/Y5/sp4_v_b_4
+      -> X5/Y1/sp4_v_b_4
+        -> X5/Y0/local_g0_4
+          -> X5/Y0/io_0:D_OUT_0
+            => sink 0
+  no dangling wires.
+checking net DATA_OUT[7]$SB_IO_OUT
+  driver: X1/Y9/lutff_4:out
+    -> X0/Y9/local_g1_4
+      -> X0/Y9/io_1:D_OUT_0
+        => sink 0
+  no dangling wires.
+checking net DATA_IN[7]
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_5_I3_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X4/Y4/lutff_1:out
+    -> X5/Y4/local_g1_1
+      -> X5/Y4/lutff_6:in_0
+        -> X5/Y4/lutff_6:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_9_O_SB_LUT4_O_I2[3]
+  driver: X4/Y6/lutff_2:cout
+    -> X4/Y6/lutff_3:in_3
+      -> X4/Y6/lutff_3:in_3_lut
+        => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_9_O_SB_LUT4_O_I2[2]
+  driver: X5/Y6/lutff_6:out
+    -> X4/Y6/local_g2_6
+      -> X4/Y6/lutff_3:in_1
+        -> X4/Y6/lutff_3:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net RESTART_SB_LUT4_I2_I3[2]
+  driver: X5/Y7/lutff_2:out
+    -> X5/Y7/local_g3_2
+      -> X5/Y7/lutff_1:in_2
+        -> X5/Y7/lutff_1:in_3_lut
+          => sink 0
+      -> X5/Y7/lutff_2:in_3
+        -> X5/Y7/lutff_2:in_2_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_5_I3_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X5/Y4/lutff_6:out
+    -> X5/Y4/local_g0_6
+      -> X5/Y4/lutff_0:in_2
+        -> X5/Y4/lutff_0:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_DFFES_Q_D
+  driver: X2/Y4/lutff_5:out
+    -> X2/Y7/sp4_v_b_7
+      -> X2/Y7/local_g0_7
+        -> X2/Y7/lutff_4:in_3
+          -> X2/Y7/lutff_4:in_0_lut
+            => sink 0
+    -> X2/Y4/local_g2_5
+      -> X2/Y4/lutff_2:in_3
+        -> X2/Y4/lutff_2:in_0_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_O[1]
+  driver: X2/Y5/lutff_4:out
+    -> X2/Y5/sp4_h_r_8
+      -> X4/Y5/local_g2_0
+        -> X4/Y5/lutff_3:in_1
+          -> X4/Y5/lutff_3:in_1_lut
+            => sink 1
+  no dangling wires.
+checking net DATA_OUT[1]$SB_IO_OUT
+  driver: X4/Y8/lutff_2:out
+    -> X0/Y8/span12_horz_4
+      -> X0/Y8/local_g0_4
+        -> X0/Y8/io_0:D_OUT_0
+          => sink 0
+  no dangling wires.
+checking net DATA_IN[0]
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_6_I2_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X4/Y9/lutff_7:out
+    -> X4/Y8/local_g0_7
+      -> X4/Y8/lutff_5:in_2
+        -> X4/Y8/lutff_5:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_O[2]
+  driver: X4/Y7/lutff_1:out
+    -> X5/Y7/sp4_v_b_3
+      -> X4/Y5/local_g0_3
+        -> X4/Y5/lutff_3:in_2
+          -> X4/Y5/lutff_3:in_2_lut
+            => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_5_I3_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X5/Y4/lutff_0:out
+    -> X5/Y4/sp4_h_r_0
+      -> X5/Y8/sp4_v_b_6
+        -> X5/Y7/local_g1_3
+          -> X5/Y7/lutff_4:in_2
+            -> X5/Y7/lutff_4:in_2_lut
+              => sink 0
+  no dangling wires.
+checking net DATA_OUT[2]$SB_IO_OUT
+  driver: X4/Y5/lutff_7:out
+    -> X4/Y6/sp4_v_b_3
+      -> X4/Y2/sp4_v_b_6
+        -> X4/Y0/local_g1_3
+          -> X4/Y0/io_0:D_OUT_0
+            => sink 0
+  no dangling wires.
+checking net DATA_OUT[1]
+  undriven and unrouted
+checking net $PACKER_VCC_NET
+  driver: X1/Y6/lutff_4:out
+    -> X1/Y5/local_g1_4
+      -> X1/Y5/lutff_0:in_3
+        -> X1/Y5/lutff_0:in_3_lut
+          => sink 1
+  no dangling wires.
+checking net DATA_OUT[7]
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_5_I2[3]
+  driver: X5/Y7/lutff_4:out
+    -> X4/Y7/local_g2_4
+      -> X4/Y7/lutff_6:in_0
+        -> X4/Y7/lutff_6:in_3_lut
+          => sink 1
+      -> X4/Y7/lutff_4:in_0
+        -> X4/Y7/lutff_4:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_DFFES_Q_D
+  driver: X2/Y6/lutff_1:out
+    -> X2/Y6/sp4_v_b_2
+      -> X2/Y4/local_g2_2
+        -> X2/Y4/lutff_3:in_3
+          -> X2/Y4/lutff_3:in_0_lut
+            => sink 1
+    -> X2/Y7/local_g0_1
+      -> X2/Y7/lutff_6:in_1
+        -> X2/Y7/lutff_6:in_0_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_O[2]
+  driver: X2/Y5/lutff_6:out
+    -> X1/Y5/sp4_h_r_1
+      -> X4/Y5/local_g2_4
+        -> X4/Y5/lutff_4:in_2
+          -> X4/Y5/lutff_4:in_2_lut
+            => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_5_I2[2]
+  driver: X4/Y7/lutff_3:out
+    -> X4/Y7/local_g1_3
+      -> X4/Y7/lutff_4:in_2
+        -> X4/Y7/lutff_4:in_2_lut
+          => sink 0
+      -> X4/Y7/lutff_3:in_3
+        -> X4/Y7/lutff_3:in_2_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_O[3]
+  driver: X4/Y5/lutff_3:cout
+    -> X4/Y5/lutff_4:in_3
+      -> X4/Y5/lutff_4:in_3_lut
+        => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_4_O[2]
+  driver: X4/Y5/lutff_5:out
+    -> X4/Y6/local_g1_5
+      -> X4/Y6/lutff_7:in_1
+        -> X4/Y6/lutff_7:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_O[1]
+  driver: X2/Y5/lutff_7:out
+    -> X1/Y5/sp4_h_r_3
+      -> X4/Y5/local_g2_6
+        -> X4/Y5/lutff_5:in_1
+          -> X4/Y5/lutff_5:in_1_lut
+            => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_9_I2_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X5/Y8/lutff_3:out
+    -> X5/Y8/local_g3_3
+      -> X5/Y8/lutff_7:in_1
+        -> X5/Y8/lutff_7:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_4_O[3]
+  driver: X4/Y7/lutff_7:out
+    -> X4/Y6/local_g0_7
+      -> X4/Y6/lutff_7:in_0
+        -> X4/Y6/lutff_7:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_5_O[3]
+  driver: X4/Y6/lutff_5:out
+    -> X4/Y7/local_g0_5
+      -> X4/Y7/lutff_7:in_2
+        -> X4/Y7/lutff_7:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_O[2]
+  driver: X2/Y5/lutff_0:out
+    -> X2/Y5/sp4_h_r_0
+      -> X4/Y5/local_g3_0
+        -> X4/Y5/lutff_5:in_2
+          -> X4/Y5/lutff_5:in_2_lut
+            => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_5_O[2]
+  driver: X4/Y7/lutff_4:out
+    -> X4/Y7/local_g1_4
+      -> X4/Y7/lutff_7:in_0
+        -> X4/Y7/lutff_7:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_5_O_SB_LUT4_O_I2[2]
+  driver: X5/Y5/lutff_4:out
+    -> X4/Y6/local_g1_4
+      -> X4/Y6/lutff_5:in_2
+        -> X4/Y6/lutff_5:in_2_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_5_O_SB_LUT4_O_I2[3]
+  driver: X4/Y6/lutff_4:cout
+    -> X4/Y6/lutff_5:in_3
+      -> X4/Y6/lutff_5:in_3_lut
+        => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_1_I3[3]
+  driver: X4/Y6/lutff_5:cout
+    -> X4/Y6/lutff_6:in_3
+      -> X4/Y6/lutff_6:in_3_lut
+        => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_6_I2_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X4/Y9/lutff_1:out
+    -> X4/Y9/local_g0_1
+      -> X4/Y9/lutff_7:in_2
+        -> X4/Y9/lutff_7:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net DATA_OUT[3]$SB_IO_OUT
+  driver: X5/Y6/lutff_1:out
+    -> X5/Y6/sp4_h_r_2
+      -> X9/Y6/sp4_h_r_10
+        -> X13/Y6/local_g0_7
+          -> X13/Y6/io_1:D_OUT_0
+            => sink 0
+  no dangling wires.
+checking net DATA_OUT[3]
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_I2_O
+  driver: X1/Y6/lutff_6:out
+    -> X1/Y7/sp4_v_b_1
+      -> X1/Y7/sp4_h_r_7
+        -> X2/Y7/local_g0_2
+          -> X2/Y7/lutff_global:cen
+            => sink 7
+    -> X0/Y6/span4_horz_33
+      -> X2/Y6/sp4_v_b_3
+        -> X1/Y6/local_g1_3
+          -> X1/Y6/lutff_global:cen
+            => sink 6
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_13_I3_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X5/Y8/lutff_2:out
+    -> X5/Y7/local_g1_2
+      -> X5/Y7/lutff_6:in_3
+        -> X5/Y7/lutff_6:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_3_I2_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X5/Y4/lutff_5:out
+    -> X5/Y4/local_g0_5
+      -> X5/Y4/lutff_2:in_1
+        -> X5/Y4/lutff_2:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net DATA_IN[2]
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0_SB_LUT4_I2_O_SB_DFFER_Q_D_SB_LUT4_O_I2[0]
+  driver: X1/Y9/lutff_2:out
+    -> X1/Y9/local_g1_2
+      -> X1/Y9/lutff_5:in_0
+        -> X1/Y9/lutff_5:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_9_I2_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X5/Y8/lutff_7:out
+    -> X5/Y8/local_g0_7
+      -> X5/Y8/lutff_5:in_2
+        -> X5/Y8/lutff_5:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net DATA_OUT[4]
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0_SB_LUT4_I2_O[0]
+  driver: X1/Y9/lutff_5:out
+    -> X1/Y9/local_g2_5
+      -> X1/Y9/lutff_1:in_2
+        -> X1/Y9/lutff_1:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_13_I3_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X5/Y8/lutff_1:out
+    -> X5/Y8/local_g3_1
+      -> X5/Y8/lutff_2:in_2
+        -> X5/Y8/lutff_2:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net ENABLE
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_3_I2_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X5/Y4/lutff_2:out
+    -> X5/Y4/local_g0_2
+      -> X5/Y4/lutff_7:in_3
+        -> X5/Y4/lutff_7:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net DATA_OUT[4]$SB_IO_OUT
+  driver: X4/Y6/lutff_7:out
+    -> X4/Y13/sp12_v_b_1
+      -> X4/Y17/span12_vert_17
+        -> X4/Y17/local_g0_1
+          -> X4/Y17/io_1:D_OUT_0
+            => sink 0
+  no dangling wires.
+checking net DATA_OUT[6]
+  undriven and unrouted
+checking net RESET
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_3_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X5/Y4/lutff_7:out
+    -> X5/Y5/local_g0_7
+      -> X5/Y5/lutff_5:in_0
+        -> X5/Y5/lutff_5:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0_SB_DFFR_Q_D
+  driver: X1/Y8/lutff_2:out
+    -> X1/Y8/local_g1_2
+      -> X1/Y8/lutff_1:in_0
+        -> X1/Y8/lutff_1:in_0_lut
+          => sink 1
+      -> X1/Y8/lutff_3:in_2
+        -> X1/Y8/lutff_3:in_0_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O[1]
+  driver: X1/Y7/lutff_7:out
+    -> X1/Y6/local_g1_7
+      -> X1/Y6/lutff_6:in_0
+        -> X1/Y6/lutff_6:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I2[2]
+  driver: X1/Y6/lutff_0:out
+    -> X1/Y7/local_g0_0
+      -> X1/Y7/lutff_7:in_1
+        -> X1/Y7/lutff_7:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_2_O_SB_LUT4_O_I0[1]
+  driver: X2/Y7/lutff_2:out
+    -> X1/Y7/sp4_h_r_9
+      -> X5/Y7/sp4_v_b_9
+        -> X4/Y5/local_g2_1
+          -> X4/Y5/lutff_6:in_1
+            -> X4/Y5/lutff_6:in_1_lut
+              => sink 1
+    -> X1/Y7/local_g2_2
+      -> X1/Y7/lutff_6:in_2
+        -> X1/Y7/lutff_6:in_2_lut
+          => sink 2
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO
+  driver: X1/Y7/lutff_6:cout
+    -> X1/Y7/lutff_7:in_3
+      -> X1/Y7/lutff_7:in_3_lut
+        => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1
+  driver: X1/Y6/lutff_3:out
+    -> X2/Y5/local_g2_3
+      -> X2/Y5/lutff_0:in_1
+        -> X2/Y5/lutff_0:in_3_lut
+          => sink 1
+    -> X1/Y7/local_g0_3
+      -> X1/Y7/lutff_5:in_2
+        -> X1/Y7/lutff_5:in_2_lut
+          => sink 2
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO
+  driver: X1/Y7/lutff_5:cout
+    => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1
+  driver: X1/Y6/lutff_2:out
+    -> X2/Y5/local_g2_2
+      -> X2/Y5/lutff_6:in_2
+        -> X2/Y5/lutff_6:in_3_lut
+          => sink 1
+    -> X1/Y7/local_g1_2
+      -> X1/Y7/lutff_4:in_1
+        -> X1/Y7/lutff_4:in_2_lut
+          => sink 2
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO
+  driver: X1/Y7/lutff_4:cout
+    => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1
+  driver: X2/Y7/lutff_6:out
+    -> X1/Y7/sp4_h_r_1
+      -> X4/Y7/local_g3_4
+        -> X4/Y7/lutff_1:in_0
+          -> X4/Y7/lutff_1:in_3_lut
+            => sink 1
+    -> X1/Y7/local_g2_6
+      -> X1/Y7/lutff_3:in_1
+        -> X1/Y7/lutff_3:in_2_lut
+          => sink 2
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO
+  driver: X1/Y7/lutff_3:cout
+    => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1
+  driver: X2/Y7/lutff_4:out
+    -> X2/Y6/local_g1_4
+      -> X2/Y6/lutff_5:in_0
+        -> X2/Y6/lutff_5:in_3_lut
+          => sink 1
+    -> X1/Y7/local_g2_4
+      -> X1/Y7/lutff_2:in_2
+        -> X1/Y7/lutff_2:in_2_lut
+          => sink 2
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO
+  driver: X1/Y7/lutff_2:cout
+    => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_I1
+  driver: X2/Y7/lutff_1:out
+    -> X2/Y6/local_g1_1
+      -> X2/Y6/lutff_4:in_0
+        -> X2/Y6/lutff_4:in_3_lut
+          => sink 1
+    -> X1/Y7/local_g3_1
+      -> X1/Y7/lutff_1:in_1
+        -> X1/Y7/lutff_1:in_2_lut
+          => sink 2
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO
+  driver: X1/Y7/lutff_1:cout
+    => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO
+  driver: X1/Y7/lutff_0:cout
+    => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_9_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X5/Y8/lutff_5:out
+    -> X5/Y7/local_g1_5
+      -> X5/Y7/lutff_3:in_1
+        -> X5/Y7/lutff_3:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3
+  driver: X2/Y7/lutff_3:out
+    -> X2/Y6/local_g0_3
+      -> X2/Y6/lutff_0:in_1
+        -> X2/Y6/lutff_0:in_3_lut
+          => sink 0
+    -> X1/Y7/local_g2_3
+      -> X1/Y7/lutff_0:in_1
+        -> X1/Y7/lutff_0:in_2_lut
+          => sink 2
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_13_I3_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X5/Y8/lutff_6:out
+    -> X5/Y8/local_g2_6
+      -> X5/Y8/lutff_1:in_3
+        -> X5/Y8/lutff_1:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_13_I2[2]
+  driver: X5/Y7/lutff_0:out
+    -> X5/Y6/local_g0_0
+      -> X5/Y6/lutff_0:in_0
+        -> X5/Y6/lutff_0:in_2_lut
+          => sink 0
+    -> X5/Y7/local_g2_0
+      -> X5/Y7/lutff_0:in_0
+        -> X5/Y7/lutff_0:in_2_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_13_I2[3]
+  driver: X5/Y7/lutff_6:out
+    -> X4/Y6/local_g3_6
+      -> X4/Y6/lutff_0:in_3
+        -> X4/Y6/lutff_0:in_3_lut
+          => sink 1
+    -> X5/Y6/local_g1_6
+      -> X5/Y6/lutff_0:in_1
+        -> X5/Y6/lutff_0:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_3_I2[3]
+  driver: X5/Y5/lutff_5:out
+    -> X5/Y5/local_g1_5
+      -> X5/Y5/lutff_4:in_2
+        -> X5/Y5/lutff_4:in_3_lut
+          => sink 1
+      -> X5/Y5/lutff_1:in_3
+        -> X5/Y5/lutff_1:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_3_I2[2]
+  driver: X5/Y5/lutff_0:out
+    -> X5/Y5/local_g0_0
+      -> X5/Y5/lutff_1:in_1
+        -> X5/Y5/lutff_1:in_2_lut
+          => sink 0
+      -> X5/Y5/lutff_0:in_0
+        -> X5/Y5/lutff_0:in_2_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_O[3]
+  driver: X4/Y5/lutff_4:cout
+    -> X4/Y5/lutff_5:in_3
+      -> X4/Y5/lutff_5:in_3_lut
+        => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_2_O[2]
+  driver: X4/Y5/lutff_6:out
+    -> X5/Y5/local_g1_6
+      -> X5/Y5/lutff_6:in_1
+        -> X5/Y5/lutff_6:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_2_O_SB_LUT4_O_I0[3]
+  driver: X4/Y5/lutff_5:cout
+    -> X4/Y5/lutff_6:in_3
+      -> X4/Y5/lutff_6:in_3_lut
+        => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_DFFES_Q_D
+  driver: X2/Y7/lutff_5:out
+    -> X3/Y7/sp4_v_b_11
+      -> X2/Y5/local_g0_0
+        -> X2/Y5/lutff_1:in_1
+          -> X2/Y5/lutff_1:in_0_lut
+            => sink 0
+    -> X2/Y7/local_g3_5
+      -> X2/Y7/lutff_3:in_1
+        -> X2/Y7/lutff_3:in_0_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_LUT4_I2_O[2]
+  driver: X1/Y5/lutff_0:out
+    -> X1/Y4/local_g0_0
+      -> X1/Y4/lutff_7:in_1
+        -> X1/Y4/lutff_7:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net DATA_OUT[5]$SB_IO_OUT
+  driver: X5/Y5/lutff_6:out
+    -> X5/Y6/sp4_v_b_1
+      -> X5/Y2/sp4_v_b_4
+        -> X5/Y0/local_g0_1
+          -> X5/Y0/io_1:D_OUT_0
+            => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_O[1]
+  driver: X2/Y5/lutff_2:out
+    -> X2/Y5/sp4_h_r_4
+      -> X4/Y5/local_g3_4
+        -> X4/Y5/lutff_4:in_1
+          -> X4/Y5/lutff_4:in_1_lut
+            => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_2_O[3]
+  driver: X5/Y5/lutff_3:out
+    -> X5/Y5/local_g3_3
+      -> X5/Y5/lutff_6:in_0
+        -> X5/Y5/lutff_6:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_3_O[3]
+  driver: X4/Y6/lutff_6:out
+    -> X5/Y5/local_g2_6
+      -> X5/Y5/lutff_3:in_3
+        -> X5/Y5/lutff_3:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_3_O[2]
+  driver: X5/Y5/lutff_1:out
+    -> X5/Y5/local_g3_1
+      -> X5/Y5/lutff_3:in_1
+        -> X5/Y5/lutff_3:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net CLOCK
+  undriven and unrouted
+checking net AVERAGE
+  undriven and unrouted
+checking net DATA_IN[4]
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_DFFES_Q_D
+  driver: X1/Y6/lutff_7:out
+    -> X1/Y6/local_g3_7
+      -> X1/Y6/lutff_2:in_2
+        -> X1/Y6/lutff_2:in_0_lut
+          => sink 1
+    -> X2/Y6/local_g1_7
+      -> X2/Y6/lutff_3:in_3
+        -> X2/Y6/lutff_3:in_0_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_I2_O_SB_DFFES_E_D
+  driver: X2/Y6/lutff_2:out
+    -> X2/Y6/local_g1_2
+      -> X2/Y6/lutff_6:in_3
+        -> X2/Y6/lutff_6:in_0_lut
+          => sink 0
+    -> X2/Y7/local_g1_2
+      -> X2/Y7/lutff_2:in_3
+        -> X2/Y7/lutff_2:in_0_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_I3_O
+  driver: X2/Y5/lutff_5:out
+    -> X2/Y5/sp4_v_b_10
+      -> X2/Y9/sp4_v_b_6
+        -> X2/Y6/local_g3_3
+          -> X2/Y6/lutff_global:cen
+            => sink 1
+    -> X2/Y5/sp4_h_r_10
+      -> X2/Y5/local_g0_2
+        -> X2/Y5/lutff_global:cen
+          => sink 2
+    -> X2/Y8/sp4_v_b_7
+      -> X2/Y4/sp4_v_b_3
+        -> X2/Y4/local_g1_3
+          -> X2/Y4/lutff_global:cen
+            => sink 6
+        -> X1/Y4/local_g1_3
+          -> X1/Y4/lutff_global:cen
+            => sink 7
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O[1]
+  driver: X1/Y8/lutff_1:out
+    -> X2/Y8/sp4_v_b_3
+      -> X2/Y5/local_g3_6
+        -> X2/Y5/lutff_5:in_2
+          -> X2/Y5/lutff_5:in_2_lut
+            => sink 0
+    -> X1/Y8/local_g1_1
+      -> X1/Y8/lutff_7:in_3
+        -> X1/Y8/lutff_7:in_3_lut
+          => sink 4
+      -> X1/Y8/lutff_2:in_2
+        -> X1/Y8/lutff_2:in_3_lut
+          => sink 2
+    -> X2/Y8/local_g0_1
+      -> X2/Y8/lutff_1:in_2
+        -> X2/Y8/lutff_1:in_3_lut
+          => sink 3
+    -> X1/Y7/local_g0_1
+      -> X1/Y7/lutff_7:in_0
+        -> X1/Y7/lutff_7:in_0_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O[0]
+  driver: X1/Y8/lutff_3:out
+    -> X1/Y8/sp4_v_b_6
+      -> X1/Y6/local_g2_6
+        -> X1/Y6/lutff_6:in_2
+          -> X1/Y6/lutff_6:in_1_lut
+            => sink 4
+    -> X2/Y8/local_g0_3
+      -> X2/Y8/lutff_1:in_0
+        -> X2/Y8/lutff_1:in_2_lut
+          => sink 2
+    -> X1/Y8/local_g2_3
+      -> X1/Y8/lutff_2:in_3
+        -> X1/Y8/lutff_2:in_2_lut
+          => sink 1
+      -> X1/Y8/lutff_7:in_2
+        -> X1/Y8/lutff_7:in_2_lut
+          => sink 3
+    -> X2/Y9/sp4_v_b_10
+      -> X2/Y5/sp4_v_b_6
+        -> X2/Y5/local_g1_6
+          -> X2/Y5/lutff_5:in_0
+            -> X2/Y5/lutff_5:in_1_lut
+              => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_1_I3_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X2/Y9/lutff_3:out
+    -> X2/Y9/local_g2_3
+      -> X2/Y9/lutff_4:in_1
+        -> X2/Y9/lutff_4:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_1_O[3]
+  driver: X1/Y4/lutff_7:out
+    -> X1/Y4/local_g3_7
+      -> X1/Y4/lutff_6:in_2
+        -> X1/Y4/lutff_6:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_1_O[2]
+  driver: X2/Y5/lutff_3:out
+    -> X1/Y4/local_g3_3
+      -> X1/Y4/lutff_6:in_0
+        -> X1/Y4/lutff_6:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_1_O[1]
+  driver: X1/Y4/lutff_1:out
+    -> X1/Y4/local_g2_1
+      -> X1/Y4/lutff_6:in_3
+        -> X1/Y4/lutff_6:in_1_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_1_O[0]
+  driver: X1/Y4/lutff_4:out
+    -> X1/Y4/local_g3_4
+      -> X1/Y4/lutff_6:in_1
+        -> X1/Y4/lutff_6:in_0_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O[2]
+  driver: X1/Y5/lutff_7:out
+    -> X1/Y6/local_g0_7
+      -> X1/Y6/lutff_6:in_3
+        -> X1/Y6/lutff_6:in_3_lut
+          => sink 1
+    -> X2/Y5/local_g1_7
+      -> X2/Y5/lutff_5:in_3
+        -> X2/Y5/lutff_5:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0[2]
+  driver: X1/Y4/lutff_0:out
+    -> X1/Y4/local_g3_0
+      -> X1/Y4/lutff_7:in_0
+        -> X1/Y4/lutff_7:in_2_lut
+          => sink 1
+    -> X1/Y5/local_g0_0
+      -> X1/Y5/lutff_7:in_1
+        -> X1/Y5/lutff_7:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0[1]
+  driver: X0/Y5/io_1:D_IN_0
+    -> X1/Y4/local_g2_2
+      -> X1/Y4/lutff_0:in_2
+        -> X1/Y4/lutff_0:in_0_lut
+          => sink 2
+      -> X1/Y4/lutff_7:in_3
+        -> X1/Y4/lutff_7:in_1_lut
+          => sink 1
+    -> X1/Y6/local_g2_2
+      -> X1/Y6/lutff_0:in_0
+        -> X1/Y6/lutff_0:in_0_lut
+          => sink 5
+      -> X1/Y6/lutff_5:in_3
+        -> X1/Y6/lutff_5:in_3_lut
+          -> X1/Y6/lutff_5:out
+            -> X1/Y7/local_g0_5
+              -> X1/Y7/lutff_7:in_2
+                -> X1/Y7/lutff_7:in_1_lut
+                  => sink 3
+    -> X0/Y5/span4_horz_36
+      -> X1/Y9/sp4_v_b_1
+        -> X1/Y9/local_g0_1
+          -> X1/Y9/lutff_7:in_2
+            -> X1/Y9/lutff_7:in_0_lut
+              => sink 6
+          -> X1/Y9/lutff_2:in_1
+            -> X1/Y9/lutff_2:in_2_lut
+              => sink 4
+    -> X0/Y5/span4_horz_20
+      -> X1/Y5/local_g2_1
+        -> X1/Y5/lutff_7:in_2
+          -> X1/Y5/lutff_7:in_1_lut
+            => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0[0]
+  driver: X1/Y4/lutff_6:out
+    -> X1/Y5/local_g1_6
+      -> X1/Y5/lutff_7:in_0
+        -> X1/Y5/lutff_7:in_0_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1[2]
+  driver: X2/Y6/lutff_6:out
+    -> X3/Y9/sp4_v_b_8
+      -> X3/Y5/sp4_h_r_1
+        -> X4/Y5/local_g0_4
+          -> X4/Y5/lutff_6:in_2
+            -> X4/Y5/lutff_6:in_0_lut
+              => sink 2
+    -> X2/Y5/local_g0_6
+      -> X2/Y5/lutff_3:in_3
+        -> X2/Y5/lutff_3:in_2_lut
+          => sink 1
+    -> X1/Y5/local_g3_6
+      -> X1/Y5/lutff_6:in_1
+        -> X1/Y5/lutff_6:in_2_lut
+          => sink 3
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1[0]
+  driver: X0/Y6/io_0:D_IN_0
+    -> X1/Y7/local_g3_0
+      -> X1/Y7/lutff_6:in_1
+        -> X1/Y7/lutff_6:in_1_lut
+          => sink 7
+    -> X0/Y6/span4_horz_24
+      -> X2/Y10/sp4_v_b_5
+        -> X2/Y8/local_g3_5
+          -> X2/Y8/lutff_2:in_0
+            -> X2/Y8/lutff_2:in_0_lut
+              => sink 4
+    -> X0/Y6/span4_horz_16
+      -> X3/Y6/sp4_h_r_5
+        -> X4/Y6/local_g1_0
+          -> X4/Y6/lutff_6:in_1
+            -> X4/Y6/lutff_6:in_1_lut
+              => sink 6
+      -> X2/Y6/local_g2_0
+        -> X2/Y6/lutff_2:in_2
+          -> X2/Y6/lutff_2:in_3_lut
+            => sink 3
+      -> X3/Y10/sp4_v_b_5
+        -> X2/Y9/local_g3_0
+          -> X2/Y9/lutff_3:in_2
+            -> X2/Y9/lutff_3:in_2_lut
+              => sink 5
+      -> X3/Y6/sp4_v_b_5
+        -> X2/Y5/local_g3_0
+          -> X2/Y5/lutff_3:in_2
+            -> X2/Y5/lutff_3:in_0_lut
+              => sink 1
+    -> X1/Y5/local_g2_0
+      -> X1/Y5/lutff_6:in_2
+        -> X1/Y5/lutff_6:in_1_lut
+          => sink 2
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO
+  driver: X1/Y5/lutff_6:cout
+    -> X1/Y5/lutff_7:in_3
+      -> X1/Y5/lutff_7:in_3_lut
+        => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_DFFES_Q_D_SB_DFFES_D_Q[2]
+  driver: X1/Y4/lutff_2:out
+    -> X1/Y4/local_g0_2
+      -> X1/Y4/lutff_4:in_0
+        -> X1/Y4/lutff_4:in_2_lut
+          => sink 1
+    -> X2/Y5/local_g3_2
+      -> X2/Y5/lutff_7:in_0
+        -> X2/Y5/lutff_7:in_3_lut
+          => sink 2
+    -> X1/Y5/local_g1_2
+      -> X1/Y5/lutff_5:in_2
+        -> X1/Y5/lutff_5:in_2_lut
+          => sink 3
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_DFFES_Q_D_SB_DFFES_D_Q[0]
+  driver: X13/Y4/io_0:D_IN_0
+    -> X9/Y4/sp4_h_r_5
+      -> X5/Y4/sp4_h_r_5
+        -> X1/Y4/sp4_h_r_5
+          -> X1/Y4/local_g1_5
+            -> X1/Y4/lutff_3:in_3
+              -> X1/Y4/lutff_3:in_3_lut
+                => sink 3
+          -> X1/Y4/local_g0_5
+            -> X1/Y4/lutff_4:in_1
+              -> X1/Y4/lutff_4:in_0_lut
+                => sink 1
+          -> X1/Y8/sp4_v_b_11
+            -> X1/Y5/local_g2_6
+              -> X1/Y5/lutff_5:in_1
+                -> X1/Y5/lutff_5:in_1_lut
+                  => sink 2
+            -> X1/Y7/local_g0_6
+              -> X1/Y7/lutff_5:in_1
+                -> X1/Y7/lutff_5:in_1_lut
+                  => sink 8
+        -> X5/Y8/sp4_v_b_11
+          -> X4/Y6/local_g0_0
+            -> X4/Y6/lutff_5:in_1
+              -> X4/Y6/lutff_5:in_1_lut
+                => sink 7
+          -> X5/Y5/local_g3_6
+            -> X5/Y5/lutff_0:in_3
+              -> X5/Y5/lutff_0:in_0_lut
+                => sink 4
+    -> X4/Y4/sp12_h_r_0
+      -> X5/Y4/local_g1_3
+        -> X5/Y4/lutff_5:in_3
+          -> X5/Y4/lutff_5:in_2_lut
+            => sink 5
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO
+  driver: X1/Y5/lutff_5:cout
+    => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1[3]
+  driver: X2/Y6/lutff_3:out
+    -> X2/Y5/local_g1_3
+      -> X2/Y5/lutff_3:in_1
+        -> X2/Y5/lutff_3:in_3_lut
+          => sink 2
+      -> X2/Y5/lutff_2:in_0
+        -> X2/Y5/lutff_2:in_3_lut
+          => sink 1
+    -> X1/Y5/local_g3_3
+      -> X1/Y5/lutff_4:in_2
+        -> X1/Y5/lutff_4:in_2_lut
+          => sink 3
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1[1]
+  driver: X0/Y4/io_0:D_IN_0
+    -> X0/Y6/span4_vert_b_0
+      -> X0/Y6/span4_horz_25
+        -> X1/Y6/local_g2_4
+          -> X1/Y6/lutff_7:in_3
+            -> X1/Y6/lutff_7:in_3_lut
+              => sink 1
+    -> X0/Y4/span4_horz_40
+      -> X1/Y8/sp4_v_b_10
+        -> X1/Y7/local_g1_7
+          -> X1/Y7/lutff_4:in_2
+            -> X1/Y7/lutff_4:in_1_lut
+              => sink 6
+    -> X0/Y4/span4_horz_0
+      -> X4/Y4/sp4_v_b_6
+        -> X4/Y4/local_g0_6
+          -> X4/Y4/lutff_1:in_3
+            -> X4/Y4/lutff_1:in_2_lut
+              => sink 5
+        -> X4/Y8/sp4_v_b_6
+          -> X4/Y7/local_g0_3
+            -> X4/Y7/lutff_3:in_0
+              -> X4/Y7/lutff_3:in_0_lut
+                => sink 4
+      -> X4/Y8/sp4_v_b_0
+        -> X4/Y6/local_g2_0
+          -> X4/Y6/lutff_4:in_2
+            -> X4/Y6/lutff_4:in_1_lut
+              => sink 7
+    -> X0/Y5/span4_vert_b_0
+      -> X0/Y5/span4_horz_1
+        -> X2/Y5/local_g2_1
+          -> X2/Y5/lutff_3:in_0
+            -> X2/Y5/lutff_3:in_1_lut
+              => sink 2
+    -> X1/Y5/local_g3_4
+      -> X1/Y5/lutff_4:in_1
+        -> X1/Y5/lutff_4:in_1_lut
+          => sink 3
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO
+  driver: X1/Y5/lutff_4:cout
+    => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_DFFES_Q_D_SB_DFFES_D_Q[2]
+  driver: X2/Y4/lutff_3:out
+    -> X1/Y4/local_g2_3
+      -> X1/Y4/lutff_1:in_2
+        -> X1/Y4/lutff_1:in_2_lut
+          => sink 1
+    -> X2/Y5/local_g0_3
+      -> X2/Y5/lutff_4:in_3
+        -> X2/Y5/lutff_4:in_3_lut
+          => sink 2
+    -> X1/Y5/local_g0_3
+      -> X1/Y5/lutff_3:in_2
+        -> X1/Y5/lutff_3:in_2_lut
+          => sink 3
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_DFFES_Q_D_SB_DFFES_D_Q[0]
+  driver: X0/Y9/io_0:D_IN_0
+    -> X0/Y11/span4_vert_b_0
+      -> X0/Y7/span4_horz_1
+        -> X4/Y7/sp4_h_r_4
+          -> X5/Y7/local_g1_1
+            -> X5/Y7/lutff_2:in_0
+              -> X5/Y7/lutff_2:in_0_lut
+                => sink 6
+        -> X1/Y7/local_g1_4
+          -> X1/Y7/lutff_3:in_2
+            -> X1/Y7/lutff_3:in_1_lut
+              => sink 7
+        -> X4/Y7/sp4_v_b_7
+          -> X4/Y6/local_g1_2
+            -> X4/Y6/lutff_3:in_2
+              -> X4/Y6/lutff_3:in_1_lut
+                => sink 5
+    -> X0/Y9/span4_vert_b_0
+      -> X0/Y5/span4_horz_25
+        -> X2/Y5/sp4_v_b_1
+          -> X1/Y4/local_g2_4
+            -> X1/Y4/lutff_1:in_3
+              -> X1/Y4/lutff_1:in_0_lut
+                => sink 1
+        -> X1/Y5/local_g2_4
+          -> X1/Y5/lutff_3:in_1
+            -> X1/Y5/lutff_3:in_1_lut
+              => sink 2
+    -> X0/Y9/span4_horz_16
+      -> X3/Y9/sp4_h_r_5
+        -> X4/Y9/local_g1_0
+          -> X4/Y9/lutff_1:in_0
+            -> X4/Y9/lutff_1:in_2_lut
+              => sink 4
+    -> X0/Y10/span4_vert_b_0
+      -> X0/Y6/span4_horz_1
+        -> X2/Y6/local_g2_1
+          -> X2/Y6/lutff_1:in_0
+            -> X2/Y6/lutff_1:in_3_lut
+              => sink 3
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO
+  driver: X1/Y5/lutff_3:cout
+    => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_DFFES_Q_D_SB_DFFES_D_Q[3]
+  driver: X2/Y4/lutff_2:out
+    -> X2/Y4/sp4_h_r_4
+      -> X4/Y4/local_g3_4
+        -> X4/Y4/lutff_4:in_3
+          -> X4/Y4/lutff_4:in_3_lut
+            => sink 2
+    -> X1/Y4/local_g3_2
+      -> X1/Y4/lutff_1:in_0
+        -> X1/Y4/lutff_1:in_3_lut
+          => sink 1
+    -> X1/Y5/local_g0_2
+      -> X1/Y5/lutff_2:in_2
+        -> X1/Y5/lutff_2:in_2_lut
+          => sink 3
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO
+  driver: X1/Y5/lutff_2:cout
+    => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_DFFES_Q_D_SB_DFFES_D_Q[3]
+  driver: X2/Y4/lutff_6:out
+    -> X1/Y4/sp4_h_r_1
+      -> X4/Y4/local_g2_4
+        -> X4/Y4/lutff_3:in_3
+          -> X4/Y4/lutff_3:in_3_lut
+            => sink 2
+    -> X1/Y4/local_g2_6
+      -> X1/Y4/lutff_4:in_2
+        -> X1/Y4/lutff_4:in_3_lut
+          => sink 1
+    -> X1/Y5/local_g0_6
+      -> X1/Y5/lutff_1:in_1
+        -> X1/Y5/lutff_1:in_2_lut
+          => sink 3
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO
+  driver: X1/Y5/lutff_1:cout
+    => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3[1]
+  driver: X13/Y8/io_1:D_IN_0
+    -> X9/Y8/sp4_h_r_1
+      -> X5/Y8/sp4_h_r_4
+        -> X5/Y8/sp4_v_b_4
+          -> X4/Y6/local_g0_4
+            -> X4/Y6/lutff_0:in_2
+              -> X4/Y6/lutff_0:in_1_lut
+                => sink 7
+          -> X5/Y7/local_g0_1
+            -> X5/Y7/lutff_0:in_1
+              -> X5/Y7/lutff_0:in_0_lut
+                => sink 4
+        -> X1/Y8/sp4_h_r_0
+          -> X1/Y8/sp4_v_b_0
+            -> X1/Y7/local_g1_5
+              -> X1/Y7/lutff_0:in_2
+                -> X1/Y7/lutff_0:in_1_lut
+                  => sink 0
+          -> X1/Y8/sp4_v_b_5
+            -> X1/Y5/local_g3_0
+              -> X1/Y5/lutff_0:in_1
+                -> X1/Y5/lutff_0:in_1_lut
+                  => sink 2
+        -> X5/Y8/local_g1_4
+          -> X5/Y8/lutff_6:in_3
+            -> X5/Y8/lutff_6:in_2_lut
+              => sink 5
+    -> X2/Y8/sp12_h_r_0
+      -> X2/Y8/sp12_v_b_0
+        -> X2/Y7/local_g2_3
+          -> X2/Y7/lutff_5:in_0
+            -> X2/Y7/lutff_5:in_3_lut
+              => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO
+  driver: X1/Y5/lutff_0:cout
+    => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_9_I2[2]
+  driver: X5/Y7/lutff_5:out
+    -> X5/Y6/local_g0_5
+      -> X5/Y6/lutff_5:in_0
+        -> X5/Y6/lutff_5:in_2_lut
+          => sink 0
+    -> X5/Y7/local_g3_5
+      -> X5/Y7/lutff_5:in_1
+        -> X5/Y7/lutff_5:in_2_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3[2]
+  driver: X2/Y5/lutff_1:out
+    -> X2/Y5/sp4_h_r_2
+      -> X4/Y5/local_g3_2
+        -> X4/Y5/lutff_0:in_3
+          -> X4/Y5/lutff_0:in_3_lut
+            => sink 0
+    -> X1/Y5/local_g3_1
+      -> X1/Y5/lutff_0:in_2
+        -> X1/Y5/lutff_0:in_2_lut
+          => sink 2
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_8_O[2]
+  driver: X4/Y5/lutff_3:out
+    -> X4/Y5/local_g2_3
+      -> X4/Y5/lutff_7:in_2
+        -> X4/Y5/lutff_7:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net DATA_IN[3]
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_1_I3_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X2/Y9/lutff_4:out
+    -> X2/Y9/local_g1_4
+      -> X2/Y9/lutff_6:in_1
+        -> X2/Y9/lutff_6:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1
+  driver: X2/Y6/lutff_0:out
+    -> X1/Y6/sp4_h_r_5
+      -> X5/Y6/sp4_v_b_11
+        -> X4/Y5/local_g3_6
+          -> X4/Y5/lutff_0:in_1
+            -> X4/Y5/lutff_0:in_2_lut
+              => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0
+  driver: X4/Y5/lutff_0:out
+    -> X4/Y5/local_g0_0
+      -> X4/Y5/lutff_0:in_2
+        -> X4/Y5/lutff_0:in_1_lut
+          => sink 1
+  no dangling wires.
+checking net DATA_OUT[5]
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_12_O[1]
+  driver: X4/Y5/lutff_1:out
+    -> X5/Y5/local_g0_1
+      -> X5/Y5/lutff_2:in_1
+        -> X5/Y5/lutff_2:in_1_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_8_O[3]
+  driver: X5/Y5/lutff_7:out
+    -> X4/Y5/local_g3_7
+      -> X4/Y5/lutff_7:in_3
+        -> X4/Y5/lutff_7:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O[3]
+  driver: X5/Y6/lutff_3:out
+    -> X5/Y5/local_g1_3
+      -> X5/Y5/lutff_2:in_0
+        -> X5/Y5/lutff_2:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_13_O[3]
+  driver: X5/Y6/lutff_0:out
+    -> X5/Y6/local_g2_0
+      -> X5/Y6/lutff_3:in_3
+        -> X5/Y6/lutff_3:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_13_O[2]
+  driver: X4/Y6/lutff_1:out
+    -> X5/Y6/local_g1_1
+      -> X5/Y6/lutff_3:in_1
+        -> X5/Y6/lutff_3:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_13_O_SB_LUT4_O_I2[2]
+  driver: X4/Y7/lutff_5:out
+    -> X4/Y6/local_g0_5
+      -> X4/Y6/lutff_1:in_2
+        -> X4/Y6/lutff_1:in_2_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_13_O_SB_LUT4_O_I2[3]
+  driver: X4/Y6/lutff_0:cout
+    -> X4/Y6/lutff_1:in_3
+      -> X4/Y6/lutff_1:in_3_lut
+        => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_9_I2[3]
+  driver: X5/Y7/lutff_3:out
+    -> X5/Y6/local_g0_3
+      -> X5/Y6/lutff_2:in_3
+        -> X5/Y6/lutff_2:in_3_lut
+          => sink 0
+      -> X5/Y6/lutff_5:in_2
+        -> X5/Y6/lutff_5:in_3_lut
+          => sink 1
+  no dangling wires.
+checking net RESTART
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_1_I3_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X2/Y9/lutff_6:out
+    -> X2/Y8/local_g1_6
+      -> X2/Y8/lutff_7:in_0
+        -> X2/Y8/lutff_7:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_9_O[3]
+  driver: X4/Y6/lutff_3:out
+    -> X5/Y5/local_g2_3
+      -> X5/Y5/lutff_7:in_0
+        -> X5/Y5/lutff_7:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_11_O_SB_LUT4_O_I2[3]
+  driver: X4/Y6/lutff_1:cout
+    -> X4/Y6/lutff_2:in_3
+      -> X4/Y6/lutff_2:in_3_lut
+        => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_11_O_SB_LUT4_O_I2[2]
+  driver: X5/Y6/lutff_2:out
+    -> X4/Y6/local_g2_2
+      -> X4/Y6/lutff_2:in_2
+        -> X4/Y6/lutff_2:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_11_O_SB_LUT4_O_I2[1]
+  driver: X13/Y8/io_0:D_IN_0
+    -> X10/Y8/sp4_h_r_8
+      -> X6/Y8/sp4_h_r_11
+        -> X2/Y8/sp4_h_r_7
+          -> X2/Y8/sp4_v_b_0
+            -> X1/Y7/local_g2_5
+              -> X1/Y7/lutff_2:in_1
+                -> X1/Y7/lutff_2:in_1_lut
+                  => sink 8
+            -> X1/Y5/local_g2_5
+              -> X1/Y5/lutff_2:in_1
+                -> X1/Y5/lutff_2:in_1_lut
+                  => sink 3
+            -> X2/Y4/sp4_h_r_5
+              -> X2/Y4/local_g0_5
+                -> X2/Y4/lutff_5:in_2
+                  -> X2/Y4/lutff_5:in_3_lut
+                    => sink 4
+            -> X2/Y4/sp4_v_b_8
+              -> X1/Y4/local_g2_0
+                -> X1/Y4/lutff_1:in_1
+                  -> X1/Y4/lutff_1:in_1_lut
+                    => sink 2
+        -> X6/Y8/sp4_v_b_4
+          -> X5/Y7/local_g3_1
+            -> X5/Y7/lutff_5:in_3
+              -> X5/Y7/lutff_5:in_0_lut
+                => sink 5
+    -> X4/Y8/sp12_h_r_0
+      -> X5/Y8/local_g1_3
+        -> X5/Y8/lutff_3:in_1
+          -> X5/Y8/lutff_3:in_2_lut
+            => sink 6
+      -> X4/Y8/sp12_v_b_0
+        -> X4/Y6/local_g3_4
+          -> X4/Y6/lutff_2:in_1
+            -> X4/Y6/lutff_2:in_1_lut
+              => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_9_O[2]
+  driver: X5/Y6/lutff_5:out
+    -> X5/Y5/local_g0_5
+      -> X5/Y5/lutff_7:in_2
+        -> X5/Y5/lutff_7:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net DATA_OUT[2]
+  undriven and unrouted
+checking net DATA_OUT[0]
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_6_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X4/Y8/lutff_5:out
+    -> X4/Y7/local_g1_5
+      -> X4/Y7/lutff_0:in_0
+        -> X4/Y7/lutff_0:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_11_I3_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X2/Y3/lutff_6:out
+    -> X2/Y3/local_g3_6
+      -> X2/Y3/lutff_3:in_0
+        -> X2/Y3/lutff_3:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net RESTART_SB_LUT4_I2_O[3]
+  driver: X4/Y6/lutff_4:out
+    -> X5/Y6/local_g0_4
+      -> X5/Y6/lutff_7:in_1
+        -> X5/Y6/lutff_7:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net RESTART_SB_LUT4_I2_O[2]
+  driver: X5/Y7/lutff_1:out
+    -> X5/Y6/local_g0_1
+      -> X5/Y6/lutff_7:in_2
+        -> X5/Y6/lutff_7:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_I2_SB_DFFER_Q_D_SB_LUT4_O_I2[0]
+  driver: X1/Y9/lutff_1:out
+    -> X1/Y9/local_g3_1
+      -> X1/Y9/lutff_6:in_0
+        -> X1/Y9/lutff_6:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_11_I3_SB_DFFES_Q_D_SB_LUT4_O_I2_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X2/Y3/lutff_3:out
+    -> X3/Y4/sp4_v_b_10
+      -> X3/Y8/sp4_v_b_10
+        -> X3/Y8/sp4_h_r_4
+          -> X4/Y8/local_g0_1
+            -> X4/Y8/lutff_7:in_2
+              -> X4/Y8/lutff_7:in_2_lut
+                => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_O[3]
+  driver: X4/Y5/lutff_2:cout
+    -> X4/Y5/lutff_3:in_3
+      -> X4/Y5/lutff_3:in_3_lut
+        => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_6_O[2]
+  driver: X4/Y5/lutff_4:out
+    -> X5/Y6/local_g3_4
+      -> X5/Y6/lutff_1:in_0
+        -> X5/Y6/lutff_1:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net $PACKER_GND_NET
+  net without sinks
+checking net AVERAGE_SB_LUT4_I1_11_I3_SB_DFFES_Q_D_SB_LUT4_O_I2[0]
+  driver: X4/Y8/lutff_7:out
+    -> X4/Y8/local_g3_7
+      -> X4/Y8/lutff_4:in_2
+        -> X4/Y8/lutff_4:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net DATA_OUT[6]$SB_IO_OUT
+  driver: X2/Y8/lutff_6:out
+    -> X0/Y8/span4_horz_20
+      -> X0/Y8/local_g1_4
+        -> X0/Y8/io_1:D_OUT_0
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_13_O_SB_LUT4_O_I3_SB_CARRY_CO_I1
+  driver: X4/Y6/lutff_0:out
+    -> X4/Y6/local_g3_0
+      -> X4/Y6/lutff_0:in_1
+        -> X4/Y6/lutff_0:in_2_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_6_O[3]
+  driver: X5/Y6/lutff_4:out
+    -> X5/Y6/local_g1_4
+      -> X5/Y6/lutff_1:in_2
+        -> X5/Y6/lutff_1:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_10_O[1]
+  driver: X2/Y8/lutff_1:out
+    -> X3/Y8/sp4_v_b_3
+      -> X3/Y4/sp4_h_r_3
+        -> X5/Y4/local_g2_3
+          -> X5/Y4/lutff_6:in_3
+            -> X5/Y4/lutff_6:in_3_lut
+              => sink 25
+          -> X5/Y4/lutff_5:in_2
+            -> X5/Y4/lutff_5:in_3_lut
+              => sink 21
+          -> X5/Y4/lutff_7:in_2
+            -> X5/Y4/lutff_7:in_3_lut
+              => sink 19
+          -> X5/Y4/lutff_2:in_3
+            -> X5/Y4/lutff_2:in_3_lut
+              => sink 20
+          -> X5/Y4/lutff_0:in_3
+            -> X5/Y4/lutff_0:in_3_lut
+              => sink 24
+        -> X4/Y4/local_g1_6
+          -> X4/Y4/lutff_1:in_2
+            -> X4/Y4/lutff_1:in_3_lut
+              => sink 26
+    -> X2/Y9/sp4_v_b_7
+      -> X2/Y5/sp4_h_r_7
+        -> X5/Y5/local_g2_2
+          -> X5/Y5/lutff_6:in_2
+            -> X5/Y5/lutff_6:in_1_lut
+              => sink 39
+          -> X5/Y5/lutff_2:in_2
+            -> X5/Y5/lutff_2:in_2_lut
+              => sink 44
+          -> X5/Y5/lutff_5:in_1
+            -> X5/Y5/lutff_5:in_3_lut
+              => sink 18
+          -> X5/Y5/lutff_0:in_2
+            -> X5/Y5/lutff_0:in_3_lut
+              => sink 17
+        -> X4/Y5/local_g2_7
+          -> X4/Y5/lutff_7:in_0
+            -> X4/Y5/lutff_7:in_1_lut
+              => sink 42
+    -> X1/Y8/sp4_h_r_7
+      -> X5/Y8/sp4_v_b_7
+        -> X5/Y6/local_g3_7
+          -> X5/Y6/lutff_1:in_3
+            -> X5/Y6/lutff_1:in_1_lut
+              => sink 41
+        -> X4/Y7/local_g3_2
+          -> X4/Y7/lutff_3:in_2
+            -> X4/Y7/lutff_3:in_3_lut
+              => sink 22
+          -> X4/Y7/lutff_0:in_3
+            -> X4/Y7/lutff_0:in_3_lut
+              => sink 27
+    -> X2/Y8/sp4_h_r_2
+      -> X6/Y8/sp4_v_b_2
+        -> X5/Y7/local_g2_7
+          -> X5/Y7/lutff_3:in_2
+            -> X5/Y7/lutff_3:in_3_lut
+              => sink 32
+          -> X5/Y7/lutff_2:in_1
+            -> X5/Y7/lutff_2:in_3_lut
+              => sink 47
+          -> X5/Y7/lutff_6:in_1
+            -> X5/Y7/lutff_6:in_3_lut
+              => sink 8
+          -> X5/Y7/lutff_4:in_1
+            -> X5/Y7/lutff_4:in_3_lut
+              => sink 23
+          -> X5/Y7/lutff_0:in_3
+            -> X5/Y7/lutff_0:in_3_lut
+              => sink 7
+          -> X5/Y7/lutff_5:in_0
+            -> X5/Y7/lutff_5:in_3_lut
+              => sink 31
+      -> X5/Y8/local_g2_7
+        -> X5/Y8/lutff_3:in_0
+          -> X5/Y8/lutff_3:in_3_lut
+            => sink 35
+        -> X5/Y8/lutff_7:in_2
+          -> X5/Y8/lutff_7:in_3_lut
+            => sink 34
+        -> X5/Y8/lutff_2:in_1
+          -> X5/Y8/lutff_2:in_3_lut
+            => sink 9
+        -> X5/Y8/lutff_6:in_1
+          -> X5/Y8/lutff_6:in_3_lut
+            => sink 11
+        -> X5/Y8/lutff_1:in_2
+          -> X5/Y8/lutff_1:in_3_lut
+            => sink 10
+        -> X5/Y8/lutff_5:in_0
+          -> X5/Y8/lutff_5:in_3_lut
+            => sink 33
+      -> X4/Y8/local_g2_2
+        -> X4/Y8/lutff_2:in_0
+          -> X4/Y8/lutff_2:in_1_lut
+            => sink 43
+        -> X4/Y8/lutff_7:in_3
+          -> X4/Y8/lutff_7:in_3_lut
+            => sink 2
+        -> X4/Y8/lutff_4:in_0
+          -> X4/Y8/lutff_4:in_3_lut
+            => sink 1
+        -> X4/Y8/lutff_5:in_1
+          -> X4/Y8/lutff_5:in_3_lut
+            => sink 28
+        -> X4/Y8/lutff_0:in_2
+          -> X4/Y8/lutff_0:in_3_lut
+            => sink 0
+    -> X3/Y10/sp4_v_b_11
+      -> X3/Y6/sp4_h_r_4
+        -> X4/Y6/local_g0_1
+          -> X4/Y6/lutff_7:in_2
+            -> X4/Y6/lutff_7:in_1_lut
+              => sink 40
+    -> X3/Y9/sp4_v_b_6
+      -> X3/Y9/sp4_h_r_6
+        -> X4/Y9/local_g1_3
+          -> X4/Y9/lutff_7:in_3
+            -> X4/Y9/lutff_7:in_3_lut
+              => sink 29
+          -> X4/Y9/lutff_1:in_3
+            -> X4/Y9/lutff_1:in_3_lut
+              => sink 30
+    -> X2/Y8/sp4_v_b_2
+      -> X2/Y4/sp4_v_b_10
+        -> X2/Y3/local_g1_7
+          -> X2/Y3/lutff_3:in_3
+            -> X2/Y3/lutff_3:in_3_lut
+              => sink 3
+          -> X2/Y3/lutff_6:in_0
+            -> X2/Y3/lutff_6:in_3_lut
+              => sink 4
+    -> X2/Y9/local_g1_1
+      -> X2/Y9/lutff_6:in_0
+        -> X2/Y9/lutff_6:in_3_lut
+          => sink 14
+      -> X2/Y9/lutff_3:in_3
+        -> X2/Y9/lutff_3:in_3_lut
+          => sink 16
+      -> X2/Y9/lutff_4:in_0
+        -> X2/Y9/lutff_4:in_3_lut
+          => sink 15
+    -> X2/Y8/local_g2_1
+      -> X2/Y8/lutff_7:in_2
+        -> X2/Y8/lutff_7:in_3_lut
+          => sink 13
+      -> X2/Y8/lutff_6:in_1
+        -> X2/Y8/lutff_6:in_3_lut
+          => sink 46
+      -> X2/Y8/lutff_2:in_1
+        -> X2/Y8/lutff_2:in_3_lut
+          => sink 12
+    -> X1/Y9/local_g1_1
+      -> X1/Y9/lutff_2:in_0
+        -> X1/Y9/lutff_2:in_3_lut
+          => sink 6
+      -> X1/Y9/lutff_6:in_2
+        -> X1/Y9/lutff_6:in_3_lut
+          => sink 37
+      -> X1/Y9/lutff_5:in_3
+        -> X1/Y9/lutff_5:in_3_lut
+          => sink 5
+      -> X1/Y9/lutff_1:in_3
+        -> X1/Y9/lutff_1:in_3_lut
+          => sink 38
+      -> X1/Y9/lutff_7:in_1
+        -> X1/Y9/lutff_7:in_3_lut
+          => sink 36
+      -> X1/Y9/lutff_4:in_0
+        -> X1/Y9/lutff_4:in_3_lut
+          => sink 45
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_11_I2[0]
+  driver: X0/Y3/io_1:D_IN_0
+    -> X0/Y3/span4_horz_4
+      -> X4/Y7/sp4_v_b_4
+        -> X4/Y6/local_g1_1
+          -> X4/Y6/lutff_1:in_1
+            -> X4/Y6/lutff_1:in_1_lut
+              => sink 7
+        -> X4/Y11/sp4_v_b_4
+          -> X4/Y8/local_g3_1
+            -> X4/Y8/lutff_0:in_0
+              -> X4/Y8/lutff_0:in_0_lut
+                => sink 0
+      -> X2/Y3/local_g2_4
+        -> X2/Y3/lutff_6:in_2
+          -> X2/Y3/lutff_6:in_2_lut
+            => sink 1
+    -> X1/Y4/local_g3_6
+      -> X1/Y4/lutff_4:in_3
+        -> X1/Y4/lutff_4:in_1_lut
+          => sink 4
+      -> X1/Y4/lutff_5:in_0
+        -> X1/Y4/lutff_5:in_3_lut
+          -> X1/Y4/lutff_5:out
+            -> X1/Y5/local_g0_5
+              -> X1/Y5/lutff_1:in_2
+                -> X1/Y5/lutff_1:in_1_lut
+                  => sink 8
+    -> X0/Y3/span4_horz_36
+      -> X1/Y7/sp4_v_b_6
+        -> X1/Y7/sp4_h_r_0
+          -> X2/Y7/local_g0_5
+            -> X2/Y7/lutff_0:in_3
+              -> X2/Y7/lutff_0:in_3_lut
+                => sink 6
+        -> X1/Y7/local_g1_6
+          -> X1/Y7/lutff_1:in_2
+            -> X1/Y7/lutff_1:in_1_lut
+              => sink 3
+  no dangling wires.
+checking net RESET$SB_IO_IN
+  driver: X6/Y17/io_1:D_IN_0
+    -> X5/Y17/span4_horz_r_2
+      -> X6/Y17/local_g1_6
+        -> X6/Y17/fabout
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0_SB_LUT4_I2_1_O
+  driver: X1/Y8/lutff_7:out
+    -> X0/Y9/local_g0_7
+      -> X0/Y9/fabout
+        => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_7_O[3]
+  driver: X5/Y6/lutff_7:out
+    -> X5/Y6/local_g2_7
+      -> X5/Y6/lutff_4:in_3
+        -> X5/Y6/lutff_4:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net CLOCK$SB_IO_IN
+  driver: X13/Y9/io_0:D_IN_0
+    -> X12/Y9/sp4_h_r_0
+      -> X13/Y9/local_g1_0
+        -> X13/Y9/fabout
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_11_I3
+  driver: X4/Y8/lutff_4:out
+    -> X4/Y7/local_g0_4
+      -> X4/Y7/lutff_5:in_3
+        -> X4/Y7/lutff_5:in_3_lut
+          => sink 1
+    -> X4/Y8/local_g2_4
+      -> X4/Y8/lutff_1:in_1
+        -> X4/Y8/lutff_1:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_11_I2[2]
+  driver: X4/Y8/lutff_0:out
+    -> X4/Y8/local_g3_0
+      -> X4/Y8/lutff_1:in_0
+        -> X4/Y8/lutff_1:in_2_lut
+          => sink 0
+      -> X4/Y8/lutff_0:in_3
+        -> X4/Y8/lutff_0:in_2_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_LUT4_I3_O[2]
+  driver: X2/Y6/lutff_4:out
+    -> X0/Y6/span4_horz_0
+      -> X4/Y6/sp4_v_b_0
+        -> X4/Y5/local_g0_5
+          -> X4/Y5/lutff_1:in_2
+            -> X4/Y5/lutff_1:in_2_lut
+              => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_I1_SB_LUT4_I3_O[1]
+  driver: X4/Y4/lutff_3:out
+    -> X4/Y5/local_g1_3
+      -> X4/Y5/lutff_1:in_1
+        -> X4/Y5/lutff_1:in_1_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3
+  driver: X4/Y5/lutff_0:cout
+    -> X4/Y5/lutff_1:in_3
+      -> X4/Y5/lutff_1:in_3_lut
+        => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_10_O[2]
+  driver: X4/Y5/lutff_2:out
+    -> X5/Y8/sp4_v_b_0
+      -> X4/Y8/local_g1_0
+        -> X4/Y8/lutff_2:in_1
+          -> X4/Y8/lutff_2:in_2_lut
+            => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_10_O_SB_LUT4_O_I3
+  driver: X4/Y5/lutff_1:cout
+    -> X4/Y5/lutff_2:in_3
+      -> X4/Y5/lutff_2:in_3_lut
+        => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_O[2]
+  driver: X2/Y6/lutff_5:out
+    -> X0/Y6/span4_horz_2
+      -> X4/Y6/sp4_v_b_2
+        -> X4/Y5/local_g1_7
+          -> X4/Y5/lutff_2:in_2
+            -> X4/Y5/lutff_2:in_2_lut
+              => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I1_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_O[1]
+  driver: X4/Y4/lutff_4:out
+    -> X4/Y5/local_g1_4
+      -> X4/Y5/lutff_2:in_1
+        -> X4/Y5/lutff_2:in_1_lut
+          => sink 0
+  no dangling wires.
+checking net DATA_IN[6]
+  undriven and unrouted
+checking net AVERAGE_SB_LUT4_I1_10_O[3]
+  driver: X4/Y7/lutff_2:out
+    -> X4/Y8/local_g0_2
+      -> X4/Y8/lutff_2:in_2
+        -> X4/Y8/lutff_2:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_11_O[3]
+  driver: X4/Y6/lutff_2:out
+    -> X4/Y7/local_g0_2
+      -> X4/Y7/lutff_2:in_2
+        -> X4/Y7/lutff_2:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_11_O[2]
+  driver: X4/Y8/lutff_1:out
+    -> X4/Y7/local_g1_1
+      -> X4/Y7/lutff_2:in_0
+        -> X4/Y7/lutff_2:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_1_O[1]
+  driver: X2/Y8/lutff_3:out
+    -> X2/Y8/local_g3_3
+      -> X2/Y8/lutff_6:in_2
+        -> X2/Y8/lutff_6:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_1_I2[3]
+  driver: X2/Y8/lutff_7:out
+    -> X3/Y10/sp4_v_b_7
+      -> X3/Y6/sp4_h_r_7
+        -> X4/Y6/local_g0_2
+          -> X4/Y6/lutff_6:in_2
+            -> X4/Y6/lutff_6:in_0_lut
+              => sink 1
+    -> X2/Y8/local_g3_7
+      -> X2/Y8/lutff_3:in_1
+        -> X2/Y8/lutff_3:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_1_I2[2]
+  driver: X2/Y8/lutff_2:out
+    -> X2/Y8/local_g0_2
+      -> X2/Y8/lutff_3:in_3
+        -> X2/Y8/lutff_3:in_2_lut
+          => sink 0
+      -> X2/Y8/lutff_2:in_2
+        -> X2/Y8/lutff_2:in_2_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_O[1]
+  driver: X1/Y9/lutff_0:out
+    -> X1/Y9/local_g3_0
+      -> X1/Y9/lutff_4:in_1
+        -> X1/Y9/lutff_4:in_2_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_I2[3]
+  driver: X1/Y9/lutff_6:out
+    -> X1/Y9/local_g1_6
+      -> X1/Y9/lutff_0:in_3
+        -> X1/Y9/lutff_0:in_3_lut
+          => sink 0
+  no dangling wires.
+checking net AVERAGE_SB_LUT4_I1_I2[2]
+  driver: X1/Y9/lutff_7:out
+    -> X1/Y9/local_g2_7
+      -> X1/Y9/lutff_0:in_1
+        -> X1/Y9/lutff_0:in_2_lut
+          => sink 0
+      -> X1/Y9/lutff_7:in_0
+        -> X1/Y9/lutff_7:in_2_lut
+          => sink 1
+  no dangling wires.
+checking net AVERAGE$SB_IO_IN
+  driver: X13/Y9/io_1:D_IN_0
+    -> X9/Y9/sp4_h_r_9
+      -> X5/Y9/sp4_h_r_5
+        -> X5/Y9/sp4_v_b_10
+          -> X4/Y7/local_g2_2
+            -> X4/Y7/lutff_7:in_1
+              -> X4/Y7/lutff_7:in_1_lut
+                => sink 8
+          -> X5/Y5/sp4_h_r_10
+            -> X5/Y5/local_g1_2
+              -> X5/Y5/lutff_3:in_2
+                -> X5/Y5/lutff_3:in_1_lut
+                  => sink 6
+            -> X5/Y5/local_g0_2
+              -> X5/Y5/lutff_7:in_1
+                -> X5/Y5/lutff_7:in_1_lut
+                  => sink 12
+      -> X5/Y9/sp4_h_r_0
+        -> X5/Y9/sp4_v_b_0
+          -> X4/Y7/local_g1_0
+            -> X4/Y7/lutff_2:in_3
+              -> X4/Y7/lutff_2:in_1_lut
+                => sink 2
+            -> X4/Y7/lutff_4:in_1
+              -> X4/Y7/lutff_4:in_1_lut
+                => sink 9
+          -> X5/Y6/local_g3_5
+            -> X5/Y6/lutff_5:in_1
+              -> X5/Y6/lutff_5:in_1_lut
+                => sink 13
+            -> X5/Y6/lutff_4:in_0
+              -> X5/Y6/lutff_4:in_1_lut
+                => sink 10
+            -> X5/Y6/lutff_0:in_2
+              -> X5/Y6/lutff_0:in_1_lut
+                => sink 5
+          -> X5/Y5/sp4_h_r_0
+            -> X5/Y5/local_g1_0
+              -> X5/Y5/lutff_1:in_2
+                -> X5/Y5/lutff_1:in_1_lut
+                  => sink 7
+          -> X5/Y6/local_g2_5
+            -> X5/Y6/lutff_7:in_0
+              -> X5/Y6/lutff_7:in_1_lut
+                => sink 11
+        -> X1/Y9/sp4_h_r_3
+          -> X1/Y9/local_g1_3
+            -> X1/Y9/lutff_0:in_0
+              -> X1/Y9/lutff_0:in_1_lut
+                => sink 0
+    -> X2/Y9/sp12_h_r_0
+      -> X2/Y9/sp12_v_b_0
+        -> X2/Y8/local_g2_3
+          -> X2/Y8/lutff_3:in_2
+            -> X2/Y8/lutff_3:in_1_lut
+              => sink 1
+    -> X9/Y9/sp4_h_r_1
+      -> X5/Y9/sp4_h_r_1
+        -> X5/Y9/sp4_v_b_6
+          -> X4/Y8/local_g3_3
+            -> X4/Y8/lutff_1:in_3
+              -> X4/Y8/lutff_1:in_1_lut
+                => sink 3
+          -> X5/Y6/local_g2_3
+            -> X5/Y6/lutff_3:in_2
+              -> X5/Y6/lutff_3:in_1_lut
+                => sink 4
+  no dangling wires.
+checking net ENABLE$SB_IO_IN
+  driver: X0/Y6/io_1:D_IN_0
+    -> X0/Y9/span4_vert_b_2
+      -> X0/Y9/span4_horz_13
+        -> X1/Y9/local_g2_0
+          -> X1/Y9/lutff_0:in_2
+            -> X1/Y9/lutff_0:in_0_lut
+              => sink 0
+          -> X1/Y9/lutff_7:in_3
+            -> X1/Y9/lutff_7:in_1_lut
+              => sink 20
+        -> X3/Y9/sp4_v_b_0
+          -> X2/Y8/local_g2_5
+            -> X2/Y8/lutff_2:in_3
+              -> X2/Y8/lutff_2:in_1_lut
+                => sink 8
+            -> X2/Y8/lutff_3:in_0
+              -> X2/Y8/lutff_3:in_0_lut
+                => sink 1
+      -> X0/Y5/span4_horz_13
+        -> X3/Y5/sp4_h_r_0
+          -> X5/Y5/local_g2_0
+            -> X5/Y5/lutff_7:in_3
+              -> X5/Y5/lutff_7:in_0_lut
+                => sink 17
+          -> X5/Y5/local_g3_0
+            -> X5/Y5/lutff_0:in_1
+              -> X5/Y5/lutff_0:in_1_lut
+                => sink 11
+            -> X5/Y5/lutff_3:in_0
+              -> X5/Y5/lutff_3:in_0_lut
+                => sink 9
+            -> X5/Y5/lutff_1:in_0
+              -> X5/Y5/lutff_1:in_0_lut
+                => sink 10
+    -> X0/Y6/span4_horz_4
+      -> X4/Y10/sp4_v_b_4
+        -> X4/Y7/local_g2_1
+          -> X4/Y7/lutff_2:in_1
+            -> X4/Y7/lutff_2:in_0_lut
+              => sink 2
+          -> X4/Y7/lutff_4:in_3
+            -> X4/Y7/lutff_4:in_0_lut
+              => sink 13
+        -> X4/Y7/local_g3_1
+          -> X4/Y7/lutff_7:in_3
+            -> X4/Y7/lutff_7:in_0_lut
+              => sink 12
+          -> X4/Y7/lutff_3:in_1
+            -> X4/Y7/lutff_3:in_1_lut
+              => sink 14
+        -> X4/Y8/local_g3_4
+          -> X4/Y8/lutff_1:in_2
+            -> X4/Y8/lutff_1:in_0_lut
+              => sink 3
+          -> X4/Y8/lutff_0:in_1
+            -> X4/Y8/lutff_0:in_1_lut
+              => sink 4
+      -> X4/Y6/sp4_h_r_7
+        -> X5/Y6/local_g1_2
+          -> X5/Y6/lutff_3:in_0
+            -> X5/Y6/lutff_3:in_0_lut
+              => sink 5
+          -> X5/Y6/lutff_0:in_3
+            -> X5/Y6/lutff_0:in_0_lut
+              => sink 6
+        -> X5/Y6/local_g0_2
+          -> X5/Y6/lutff_5:in_3
+            -> X5/Y6/lutff_5:in_0_lut
+              => sink 18
+          -> X5/Y6/lutff_7:in_3
+            -> X5/Y6/lutff_7:in_0_lut
+              => sink 16
+          -> X5/Y6/lutff_4:in_2
+            -> X5/Y6/lutff_4:in_0_lut
+              => sink 15
+    -> X0/Y7/span4_vert_b_2
+      -> X0/Y7/span4_horz_13
+        -> X3/Y7/sp4_h_r_0
+          -> X5/Y7/local_g3_0
+            -> X5/Y7/lutff_5:in_2
+              -> X5/Y7/lutff_5:in_1_lut
+                => sink 19
+        -> X3/Y7/sp4_h_r_3
+          -> X5/Y7/local_g3_3
+            -> X5/Y7/lutff_2:in_2
+              -> X5/Y7/lutff_2:in_1_lut
+                => sink 22
+            -> X5/Y7/lutff_0:in_2
+              -> X5/Y7/lutff_0:in_1_lut
+                => sink 7
+            -> X5/Y7/lutff_1:in_3
+              -> X5/Y7/lutff_1:in_1_lut
+                => sink 21
+  no dangling wires.
+Info: Checksum: 0xd92ffcc9
+Clock 'CLOCK$SB_IO_IN_$glb_clk' can be driven by:
+ CLOCK$sb_io.D_IN_0 delay 0.617ns
+
+Info: Critical path report for clock 'CLOCK$SB_IO_IN_$glb_clk' (posedge -> posedge):
+Info:       type curr  total name
+Info:   clk-to-q  0.54  0.54 Source AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_DFFES_Q_DFFLC.O
+Info:    routing  0.59  1.13 Net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3[2] (2,5) -> (1,5)
+Info:                          Sink AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_LUT4_I2_LC.I2
+Info:                          Defined in:
+Info:                               /usr/local/bin/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /usr/local/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.38  1.51 Source AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_LUT4_I2_LC.O
+Info:    routing  0.59  2.09 Net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_LUT4_I2_O[2] (1,5) -> (1,4)
+Info:                          Sink AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_1_O_SB_LUT4_O_2_LC.I3
+Info:                          Defined in:
+Info:                               /usr/local/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.31  2.41 Source AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_1_O_SB_LUT4_O_2_LC.O
+Info:    routing  0.59  3.00 Net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_1_O[3] (1,4) -> (1,4)
+Info:                          Sink AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0_SB_LUT4_O_LC.I3
+Info:                          Defined in:
+Info:                               /usr/local/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.31  3.31 Source AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0_SB_LUT4_O_LC.O
+Info:    routing  0.59  3.90 Net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0[0] (1,4) -> (1,5)
+Info:                          Sink AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_LC.I0
+Info:                          Defined in:
+Info:                               /usr/local/bin/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /usr/local/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.45  4.35 Source AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_LC.O
+Info:    routing  0.59  4.94 Net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O[2] (1,5) -> (2,5)
+Info:                          Sink AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_I3_LC.I3
+Info:                          Defined in:
+Info:                               /usr/local/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.31  5.25 Source AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_I3_LC.O
+Info:    routing  1.67  6.93 Net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_I3_O (2,5) -> (1,4)
+Info:                          Sink AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_LUT4_I2_O_SB_DFFER_Q_DFFLC.CEN
+Info:                          Defined in:
+Info:                               /usr/local/bin/../share/yosys/ice40/ff_map.v:15.63-15.116
+Info:                               /usr/local/bin/../share/yosys/ice40/cells_sim.v:797.8-797.9
+Info:      setup  0.10  7.03 Source AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_LUT4_I2_O_SB_DFFER_Q_DFFLC.CEN
+Info: 2.41 ns logic, 4.61 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge CLOCK$SB_IO_IN_$glb_clk':
+Info:       type curr  total name
+Info:     source  0.00  0.00 Source DATA_IN[0]$sb_io.D_IN_0
+Info:    routing  1.90  1.90 Net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3[1] (13,8) -> (1,5)
+Info:                          Sink AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_LUT4_I2_LC.I1
+Info:                          Defined in:
+Info:                               /usr/local/bin/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /usr/local/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.40  2.30 Source AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_LUT4_I2_LC.O
+Info:    routing  0.59  2.89 Net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_LUT4_I2_O[2] (1,5) -> (1,4)
+Info:                          Sink AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_1_O_SB_LUT4_O_2_LC.I3
+Info:                          Defined in:
+Info:                               /usr/local/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.31  3.21 Source AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_1_O_SB_LUT4_O_2_LC.O
+Info:    routing  0.59  3.79 Net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_I1_SB_LUT4_I3_1_O[3] (1,4) -> (1,4)
+Info:                          Sink AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0_SB_LUT4_O_LC.I3
+Info:                          Defined in:
+Info:                               /usr/local/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.31  4.11 Source AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0_SB_LUT4_O_LC.O
+Info:    routing  0.59  4.70 Net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_I0[0] (1,4) -> (1,5)
+Info:                          Sink AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_LC.I0
+Info:                          Defined in:
+Info:                               /usr/local/bin/../share/yosys/ice40/arith_map.v:62.5-70.4
+Info:                               /usr/local/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.45  5.14 Source AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_LC.O
+Info:    routing  0.59  5.73 Net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O[2] (1,5) -> (2,5)
+Info:                          Sink AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_I3_LC.I3
+Info:                          Defined in:
+Info:                               /usr/local/bin/../share/yosys/ice40/cells_map.v:6.21-6.22
+Info:      logic  0.31  6.05 Source AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_I3_LC.O
+Info:    routing  1.67  7.72 Net AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_CARRY_I1_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_CARRY_CI_CO_SB_LUT4_I3_O_SB_LUT4_I3_O (2,5) -> (1,4)
+Info:                          Sink AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_LUT4_I2_O_SB_DFFER_Q_DFFLC.CEN
+Info:                          Defined in:
+Info:                               /usr/local/bin/../share/yosys/ice40/ff_map.v:15.63-15.116
+Info:                               /usr/local/bin/../share/yosys/ice40/cells_sim.v:797.8-797.9
+Info:      setup  0.10  7.82 Source AVERAGE_SB_LUT4_I1_12_O_SB_LUT4_O_I3_SB_CARRY_CO_I0_SB_LUT4_O_I3_SB_LUT4_I2_O_SB_DFFER_Q_DFFLC.CEN
+Info: 1.89 ns logic, 5.93 ns routing
+
+Info: Critical path report for cross-domain path 'posedge CLOCK$SB_IO_IN_$glb_clk' -> '<async>':
+Info:       type curr  total name
+Info:   clk-to-q  0.54  0.54 Source RESTART_SB_LUT4_I0_1_LC.O
+Info:    routing  1.67  2.21 Net DATA_OUT[4]$SB_IO_OUT (4,6) -> (4,17)
+Info:                          Sink DATA_OUT[4]$sb_io.D_OUT_0
+Info: 0.54 ns logic, 1.67 ns routing
+
+Info: Max frequency for clock 'CLOCK$SB_IO_IN_$glb_clk': 142.35 MHz (PASS at 12.00 MHz)
+
+Info: Max delay <async>                         -> posedge CLOCK$SB_IO_IN_$glb_clk: 7.82 ns
+Info: Max delay posedge CLOCK$SB_IO_IN_$glb_clk -> <async>                        : 2.21 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 76308,  76583) |*************+
+Info: [ 76583,  76858) |+
+Info: [ 76858,  77133) | 
+Info: [ 77133,  77408) |+
+Info: [ 77408,  77683) | 
+Info: [ 77683,  77958) | 
+Info: [ 77958,  78233) |**+
+Info: [ 78233,  78508) |***+
+Info: [ 78508,  78783) |**+
+Info: [ 78783,  79058) |+
+Info: [ 79058,  79333) | 
+Info: [ 79333,  79608) | 
+Info: [ 79608,  79883) | 
+Info: [ 79883,  80158) |****+
+Info: [ 80158,  80433) |************************************************************ 
+Info: [ 80433,  80708) |*********+
+Info: [ 80708,  80983) |*************** 
+Info: [ 80983,  81258) |+
+Info: [ 81258,  81533) | 
+Info: [ 81533,  81808) |**************************+
+1 warning, 0 errors
+
+Info: Program finished normally.

@@ -1,0 +1,4 @@
+v 4
+file . "b06.vhd" "4a3e208a12164ed6ba5a582ed46fa2542bfa8151" "20240925165404.737":
+  entity b06 at 1( 0) + 0 on 11;
+  architecture behav of b06 at 13( 236) + 0 on 12;

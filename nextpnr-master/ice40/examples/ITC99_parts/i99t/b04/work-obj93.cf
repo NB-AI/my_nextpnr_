@@ -1,0 +1,4 @@
+v 4
+file . "b04.vhd" "08a5cb581a48f05a03ccdb1e3486990e5b746ed4" "20240925165028.679":
+  entity b04 at 1( 0) + 0 on 13;
+  architecture behav of b04 at 18( 406) + 0 on 14;
